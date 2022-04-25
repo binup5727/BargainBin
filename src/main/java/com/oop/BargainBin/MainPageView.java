@@ -7,6 +7,7 @@ package com.oop.BargainBin;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 
@@ -123,14 +124,14 @@ public class MainPageView extends java.awt.Frame {
         Login login = null;
         System.out.println("login added");
         login = new Login();
-        JPanel loginPanel = login.panel;
+        JTabbedPane loginPanel = login.getTabs();
         main.setLayout(new BorderLayout());
         System.out.println(login);
         main.add(loginPanel);
         
         
         //main.pack();
-        //main.MainPage.setVisible(false);
+        loginPanel.setVisible(false);
         main.setVisible(true);
         //main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());
         //main.MainPage.remove(0);
