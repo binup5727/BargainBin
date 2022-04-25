@@ -4,6 +4,7 @@
  */
 package com.oop.BargainBin;
 
+
 /**
  *
  * @author binup
@@ -31,10 +32,6 @@ public class MainPageView extends java.awt.Frame {
         ProfilePanel = new javax.swing.JPanel();
         MarketPanel = new javax.swing.JPanel();
         CartBtn = new javax.swing.JButton();
-        SignInOut = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -97,50 +94,6 @@ public class MainPageView extends java.awt.Frame {
 
         add(MainPage, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 227, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 18, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab1", jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 227, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 18, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab2", jPanel2);
-
-        javax.swing.GroupLayout SignInOutLayout = new javax.swing.GroupLayout(SignInOut);
-        SignInOut.setLayout(SignInOutLayout);
-        SignInOutLayout.setHorizontalGroup(
-            SignInOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignInOutLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(177, Short.MAX_VALUE))
-        );
-        SignInOutLayout.setVerticalGroup(
-            SignInOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignInOutLayout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 317, Short.MAX_VALUE))
-        );
-
-        add(SignInOut, java.awt.BorderLayout.NORTH);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,9 +114,14 @@ public class MainPageView extends java.awt.Frame {
     public static void main(String args[]) {
         MainPageView main = new MainPageView();
         main.setVisible(true);
+        SignInOut login = null;
+        System.out.println("login added");
+        login = new SignInOut();
+        System.out.println(login);
+        //main.add(login.panel);
         //main.SignInOut.setVisible(false);
         main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());
-        main.remove(1);
+        //main.remove(0);
         
         
         System.out.println(main);
@@ -176,10 +134,6 @@ public class MainPageView extends java.awt.Frame {
     private javax.swing.JPanel MainPage;
     private javax.swing.JPanel MarketPanel;
     private javax.swing.JPanel ProfilePanel;
-    private javax.swing.JPanel SignInOut;
     private javax.swing.JTabbedPane Tabs;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

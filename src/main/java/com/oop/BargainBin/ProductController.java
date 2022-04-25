@@ -9,5 +9,9 @@ package com.oop.BargainBin;
  * @author binup
  */
 public class ProductController {
+
+    public ProductController() {
+    }
+    
     
 }
