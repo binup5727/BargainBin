@@ -4,6 +4,11 @@
  */
 package com.oop.BargainBin;
 
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 
 /**
  *
@@ -38,6 +43,7 @@ public class MainPageView extends java.awt.Frame {
                 exitForm(evt);
             }
         });
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
         Tabs.setToolTipText("");
 
@@ -47,11 +53,11 @@ public class MainPageView extends java.awt.Frame {
         HomePanel.setLayout(HomePanelLayout);
         HomePanelLayout.setHorizontalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 632, Short.MAX_VALUE)
         );
         HomePanelLayout.setVerticalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
+            .addGap(0, 547, Short.MAX_VALUE)
         );
 
         Tabs.addTab("Home", HomePanel);
@@ -60,11 +66,11 @@ public class MainPageView extends java.awt.Frame {
         ProfilePanel.setLayout(ProfilePanelLayout);
         ProfilePanelLayout.setHorizontalGroup(
             ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 632, Short.MAX_VALUE)
         );
         ProfilePanelLayout.setVerticalGroup(
             ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
+            .addGap(0, 547, Short.MAX_VALUE)
         );
 
         Tabs.addTab("Profile", ProfilePanel);
@@ -73,11 +79,11 @@ public class MainPageView extends java.awt.Frame {
         MarketPanel.setLayout(MarketPanelLayout);
         MarketPanelLayout.setHorizontalGroup(
             MarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 632, Short.MAX_VALUE)
         );
         MarketPanelLayout.setVerticalGroup(
             MarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
+            .addGap(0, 547, Short.MAX_VALUE)
         );
 
         Tabs.addTab("Market", MarketPanel);
@@ -92,7 +98,7 @@ public class MainPageView extends java.awt.Frame {
         });
         MainPage.add(CartBtn);
 
-        add(MainPage, java.awt.BorderLayout.CENTER);
+        add(MainPage);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,15 +119,21 @@ public class MainPageView extends java.awt.Frame {
      */
     public static void main(String args[]) {
         MainPageView main = new MainPageView();
-        main.setVisible(true);
-        SignInOut login = null;
+        
+        Login login = null;
         System.out.println("login added");
-        login = new SignInOut();
+        login = new Login();
+        JPanel loginPanel = login.panel;
+        main.setLayout(new BorderLayout());
         System.out.println(login);
-        //main.add(login.panel);
-        //main.SignInOut.setVisible(false);
-        main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());
-        //main.remove(0);
+        main.add(loginPanel);
+        
+        
+        //main.pack();
+        //main.MainPage.setVisible(false);
+        main.setVisible(true);
+        //main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());
+        //main.MainPage.remove(0);
         
         
         System.out.println(main);
