@@ -16,31 +16,20 @@ public class AccountController {
     public AccountController(){
         loginModel = new AccountModel();
         loginView = loginModel.loginView;
-        //grab info from serielized file
-        loginView.btn..addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//get text from user
-				//get text from password
-				String un  = user.getText();
-				String pas = pass.getText();
-				
-				if (un.equals("admin")&&pas.equals("123")) {
-					JOptionPane.showMessageDialog(null, "Login Successful");
-                                        //update model fields 
-                                        //call update on the model
-                                        
-                                        
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "Invalid Username Or Password");
-				}
-			}
-		});
+        
         
         
     }
+    
+    public void registerUser(){
+        
+        
+    }
+    
+    
 
 AccountModel loginModel;
+
 
 }
 

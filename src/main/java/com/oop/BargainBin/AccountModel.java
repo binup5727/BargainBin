@@ -10,6 +10,8 @@ package com.oop.BargainBin;
  */
 public class AccountModel {
 
+    String username;
+
     public AccountModel(Login loginView) {
         this.loginView = loginView;
         

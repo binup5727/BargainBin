@@ -9,5 +9,11 @@ package com.oop.BargainBin;
  * @author binup
  */
 public class BargainBin {
+
+    public BargainBin() {
+        account = null;
+    }
     
+    
+    private AccountController account;
 }

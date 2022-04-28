@@ -131,10 +131,10 @@ public class MainPageView extends java.awt.Frame {
         
         
         //main.pack();
-        loginPanel.setVisible(false);
+        System.out.println(loginPanel.getParent());
         main.setVisible(true);
         //main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());
-        //main.MainPage.remove(0);
+        main.MainPage.remove(0);
         
         
         System.out.println(main);

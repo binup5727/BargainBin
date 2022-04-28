@@ -45,7 +45,7 @@ public class Login {
 	private JLabel reglblNewLabel_1;
 	private JLabel reglblNewLabel_2;
 	private JLabel reglblNewLabel_3;
-    private JTextField regName;
+        private JTextField regName;
 
 //	/**
 //	 * Launch the application.
@@ -205,7 +205,7 @@ public class Login {
                 reglblNewLabel_2 = new JLabel("Account");
 		reglblNewLabel_2.setBounds(x, lvl3Y, 72, 14);
 		panel_2.add(reglblNewLabel_2);
-                
+                 
                 
                 String[] optionsToChoose = {"Customer", "Seller"};
                 JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);               
