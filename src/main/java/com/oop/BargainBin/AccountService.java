@@ -113,7 +113,7 @@ public class AccountService {
         if (accounts == null){
             return 0;        
         }
-        return accounts.get(-1).id;
+        return accounts.get(accounts.size() - 1).id;
     }
     
     private String file;
