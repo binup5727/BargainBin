@@ -18,8 +18,8 @@ public class BargainBin {
 
     private BargainBin() {
         
-        accView = new LoginRegisterView();
-        accModel = new AccountModel(accView);
+        logRegView = new LoginRegisterView();
+        accModel = new AccountModel(logRegView);
         mainFrame = new JFrame();
         mainFrame.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -28,12 +28,12 @@ public class BargainBin {
             }
         });
         mainFrame.setLayout(new BoxLayout(mainFrame.getContentPane(), BoxLayout.LINE_AXIS));
-        mainFrame.add(accView.getTabs());
+        mainFrame.add(logRegView.getTabs());
         mainFrame.setPreferredSize(new Dimension(800, 800));
         mainFrame.pack();
         mainFrame.setVisible(true);
        
-        acc = new AccountController(accView, accModel);
+        acc = new AccountController(logRegView, accModel);
         
         
     }
@@ -102,7 +102,7 @@ public class BargainBin {
     private static BargainBin inst = new BargainBin();
     JFrame mainFrame;
     private AccountController acc;
-    private LoginRegisterView accView;
+    private LoginRegisterView logRegView;
     private AccountModel accModel;
     
 }

@@ -21,11 +21,11 @@ public class AccountController {
     
   
 
-    AccountController(LoginRegisterView accView, AccountModel accModel) {
+    AccountController(LoginRegisterView logRegView, AccountModel accModel) {
         this.accModel = accModel;
-        this.accView = accView;
-        JButton loginBtn = this.accView.getLoginbtn();
-        JButton regBtn = this.accView.getRegisterBtn();
+        this.logRegView = logRegView;
+        JButton loginBtn = this.logRegView.getLoginbtn();
+        JButton regBtn = this.logRegView.getRegisterBtn();
         loginBtn.addActionListener(new ActionListener() {
                         @Override
 			public void actionPerformed(ActionEvent e) {
@@ -68,7 +68,14 @@ public class AccountController {
         accModel.username = username;
         accModel.password = pasword;
         accModel.accountType = AccountType;
-        accountService.registerUser(accModel);
+        if(accountService.getUser(username) == null){
+            accountService.registerUser(accModel);
+            logRegView.getTabs().setVisible(false);
+            BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
+        }else{
+            JOptionPane.showMessageDialog(null, "Account already made");
+        }
+        
         
         
         
@@ -82,6 +89,8 @@ public class AccountController {
         }else{
             accModel = temp;
             JOptionPane.showMessageDialog(null, "Success");
+            logRegView.getTabs().setVisible(false);
+            BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
             
         }
         
@@ -91,7 +100,7 @@ public class AccountController {
     
 
     public AccountModel accModel;
-    public LoginRegisterView accView;
+    public LoginRegisterView logRegView;
     public AccountService accountService = new AccountService();
 
 
