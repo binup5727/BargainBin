@@ -15,12 +15,12 @@ import javax.swing.JTextField;
  *
  * @author binup
  */
-public class MainPageView extends java.awt.Frame {
+public class Temp extends java.awt.Frame {
 
     /**
      * Creates new form MainPageUI
      */
-    public MainPageView() {
+    public Temp() {
         initComponents();
     }
 
@@ -118,12 +118,28 @@ public class MainPageView extends java.awt.Frame {
     /**
      * @param args the command line arguments
      */
+    //step 1 bargain bin single instance made in main
+    //login view and account model constructed.
+    //acount controller constructed pass login vie and account model.
+    /**
+     * when user registers or logs in
+     * account controller will populate account model
+     * account controller will create instance of account class seller or customer
+     * account controller will temp make copy or main frame
+     * account controller will call parent of login view panel and remove it
+     * then the specific version of account type class seller or buyer method strategy pattern
+     * Stretegy pattern will make the panels/views for each account type and do  mainframe.add()
+     * 
+     */
+    
+    
+    
     public static void main(String args[]) {
-        MainPageView main = new MainPageView();
+        Temp main = new Temp();
         
-        Login login = null;
+        LoginRegisterView login = null;
         System.out.println("login added");
-        login = new Login();
+        login = new LoginRegisterView();
         JTabbedPane loginPanel = login.getTabs();
         main.setLayout(new BorderLayout());
         System.out.println(login);
@@ -131,6 +147,7 @@ public class MainPageView extends java.awt.Frame {
         
         
         //main.pack();
+        
         System.out.println(loginPanel.getParent());
         main.setVisible(true);
         //main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());

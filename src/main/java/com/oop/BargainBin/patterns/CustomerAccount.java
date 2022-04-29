@@ -8,27 +8,14 @@ package com.oop.BargainBin;
  *
  * @author binup
  */
-public class AccountModel {
+public class CustomerAccount implements AccountType{
 
-    String username;
-
-    public AccountModel(Login loginView) {
-        this.loginView = loginView;
-        
+    CustomerAccount(AccountModel aThis) {
+        loadUserPlatform();
     }
-    public update(){
-        //serielize to save data
-        //code update lgoinview
-        //
-    }
-    
-    
-    
-    
-    
-    Login loginView;
 
-    AccountModel() {
+    @Override
+    public void loadUserPlatform() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
