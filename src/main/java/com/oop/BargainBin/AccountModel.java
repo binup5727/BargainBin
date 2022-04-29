@@ -4,32 +4,37 @@
  */
 package com.oop.BargainBin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author binup
  */
-public class AccountModel {
+public class AccountModel implements Serializable{
 
-    String username;
+    
 
-    public AccountModel(Login loginView) {
+    public AccountModel(LoginRegisterView loginView) {
+        
         this.loginView = loginView;
+        username = "";
+        password = "";
+        accountType = "";
         
     }
-    public update(){
-        //serielize to save data
-        //code update lgoinview
-        //
-    }
     
     
     
     
     
-    Login loginView;
+    
+    
+    
+    LoginRegisterView loginView;
+    public int id;
+    public String username;
+    public String password;
+    public String accountType;
 
-    AccountModel() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+   
 }

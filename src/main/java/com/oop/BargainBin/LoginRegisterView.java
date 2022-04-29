@@ -13,6 +13,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
@@ -23,10 +24,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.Serializable;
 import javax.swing.JComboBox;
 import javax.swing.JTabbedPane;
 
-public class Login {
+public class LoginRegisterView implements Serializable{
 
 	private JFrame frame;
         private JTabbedPane tabs;
@@ -46,6 +48,10 @@ public class Login {
 	private JLabel reglblNewLabel_2;
 	private JLabel reglblNewLabel_3;
         private JTextField regName;
+        
+        //buttons
+        JButton btnNewButton;
+        JButton btnNewButton2;
 
 //	/**
 //	 * Launch the application.
@@ -66,7 +72,7 @@ public class Login {
 	/**
 	 * Create the application.
 	 */
-	public Login() {
+	public LoginRegisterView() {
 		initialize();
 	}
 
@@ -74,6 +80,12 @@ public class Login {
             return tabs;
         }
         
+        public JButton getLoginbtn(){
+            return btnNewButton;
+        }
+        public JButton getRegisterBtn(){
+            return btnNewButton2;
+        }
         private int spacer(int space, int XY, int n){
             
             return XY + (n* space);
@@ -89,7 +101,9 @@ public class Login {
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.getContentPane().setLayout(null);
 		tabs = new javax.swing.JTabbedPane();
-                
+                tabs.setPreferredSize(new Dimension(800,800));
+                tabs.setMinimumSize(new Dimension(800,800));
+                tabs.setMaximumSize(new Dimension(800,800));
 //		panel = new JPanel();
 //		panel.setBackground(SystemColor.textHighlight);
 //		panel.setBounds(10, 11, 509, 396);
@@ -146,22 +160,8 @@ public class Login {
 		lblNewLabel_1.setBounds(x, lvl1Y, 72, 14);
 		panel_1.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Login");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//get text from user
-				//get text from password
-				String un  = user.getText();
-				String pas = pass.getText();
-				
-				if (un.equals("admin")&&pas.equals("123")) {
-					JOptionPane.showMessageDialog(null, "Login Successful");
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "Invalid Username Or Password");
-				}
-			}
-		});
+		btnNewButton = new JButton("Login");
+		
 		btnNewButton.setBounds(181, 166, 89, 23);
 		panel_1.add(btnNewButton);
                 
@@ -192,47 +192,23 @@ public class Login {
 		panel_2.add(reglblNewLabel_1);
                 
                 
-                regName = new JTextField();
-                regName.setBounds(lvl1X, lvl2Y, 143, 20);
-                panel_2.add(regName);
-                regName.setColumns(10);
-                
-                
-                reglblNewLabel_2 = new JLabel("Name");
-		reglblNewLabel_2.setBounds(x, lvl2Y, 72, 14);
-		panel_2.add(reglblNewLabel_2);
-                
+                             
                 reglblNewLabel_2 = new JLabel("Account");
-		reglblNewLabel_2.setBounds(x, lvl3Y, 72, 14);
+		reglblNewLabel_2.setBounds(x, lvl2Y, 72, 14);
 		panel_2.add(reglblNewLabel_2);
                  
                 
                 String[] optionsToChoose = {"Customer", "Seller"};
                 JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);               
-                jComboBox.setBounds(lvl1X, lvl3Y, 140, 20);                
+                jComboBox.setBounds(lvl1X, lvl2Y, 140, 20);                
                 panel_2.add(jComboBox);
 
     
                 
                 
 		
-		JButton btnNewButton2 = new JButton("Register");
-		btnNewButton2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//get text from user
-				//get text from password
-				String un  = user.getText();
-				String pas = pass.getText();
-				
-				if (un.equals("admin")&&pas.equals("123")) {
-					JOptionPane.showMessageDialog(null, "Login Successful");
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "Invalid Username Or Password");
-				}
-			}
-		});
-                
+		btnNewButton2 = new JButton("Register");
+		
                 btnNewButton2.setBounds(181, lvl4Y, 89, 23);
 		panel_2.add(btnNewButton2);
                 
@@ -250,5 +226,8 @@ public class Login {
 //		lblNewLabel_3.setIcon(icon2);
 //		panel.add(lblNewLabel_3);
 	}
-        JPanel panel;
+        
+        
+        
+        
 }
