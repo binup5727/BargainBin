@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.WriteAbortedException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,15 +49,21 @@ public class SerializationService {
     public static <T> T deSerialize(FileInputStream file) throws IOException, ClassNotFoundException{
         
         ObjectInputStream in = new ObjectInputStream(file);
+        T o = null;
+        try{
+            o = (T)in.readObject();
+        }catch(WriteAbortedException e){
+            return null;
+            
+        }
         
-        T o = (T)in.readObject();
         
         in.close();
         file.close();
         
         
+        return o;
         
-        return null;
         
         
         

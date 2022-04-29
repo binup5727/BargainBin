@@ -8,6 +8,10 @@ package com.oop.BargainBin;
  *
  * @author binup
  */
-public class CustomerAccount extends AccountController {
+public class CustomerAccount {
+
+    CustomerAccount(AccountModel aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
