@@ -71,7 +71,7 @@ public class AccountController {
         if(accountService.getUser(username) == null){
             accountService.registerUser(accModel);
             logRegView.getTabs().setVisible(false);
-            BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
+            //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
         }else{
             JOptionPane.showMessageDialog(null, "Account already made");
         }
