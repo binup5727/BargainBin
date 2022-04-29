@@ -10,4 +10,6 @@ package com.oop.BargainBin;
  */
 public interface AccountType {
     
+    public void loadUserPlatform();
+    
 }

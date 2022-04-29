@@ -105,4 +105,5 @@ public class BargainBin {
     private LoginRegisterView logRegView;
     private AccountModel accModel;
     
+    
 }
