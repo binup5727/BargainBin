@@ -10,10 +10,14 @@ import java.io.Serializable;
  *
  * @author binup
  */
+
 public class AccountModel implements Serializable{
 
     
-
+    /**
+     * 
+     * @param loginView has login view of preauth view
+     */
     public AccountModel(LoginRegisterView loginView) {
         
         this.loginView = loginView;

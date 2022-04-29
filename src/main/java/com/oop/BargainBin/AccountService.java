@@ -19,7 +19,10 @@ import java.util.logging.Logger;
  * @author binup
  */
 public class AccountService {
-
+    /**
+     * create service to use for account controller
+     * saves and gets data from permanent file
+     */
     public AccountService() {
     this.file =("/temp/Accounts.txt");
     
@@ -40,7 +43,11 @@ public class AccountService {
     }
     
     
-    
+    /**
+     * 
+     * @param acc uses account model acc to store into permanent file
+     * if empty makes new array list to add acc to
+     */
     public void registerUser(AccountModel acc){
         ArrayList<AccountModel> accounts = null;
         System.out.println(acc.username);
@@ -74,7 +81,12 @@ public class AccountService {
     }
     
 
-    
+    /**
+     * 
+     * @param username username string used to search arraylist of accounts
+     * saved in file.
+     * @return the account model of user if in file
+     */
     public  AccountModel getUser(String username){
         ArrayList<AccountModel> accounts = null;
         try {
@@ -99,6 +111,11 @@ public class AccountService {
     
         return null;
     }
+    
+    /**
+     * auxillary function to get the last added accounts id
+     * @return id 
+     */
     public int getLastUser() {
         ArrayList<AccountModel> accounts = null;
         try {

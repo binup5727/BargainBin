@@ -4,6 +4,9 @@
  */
 package com.oop.BargainBin;
 
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
 /**
  *
  * @author binup
@@ -14,17 +17,27 @@ public class PostAuth {
         initComponents();
     }
 
+    public JPanel getPostAuth() {
+        return postAuth;
+    }
+
+    public JTabbedPane getTabs() {
+        return Tabs;
+    }
+     
+    
+
     
     private void initComponents() {
 
-        MainPage = new javax.swing.JPanel();
+        postAuth = new javax.swing.JPanel();
         Tabs = new javax.swing.JTabbedPane();
         
 
         Tabs.setToolTipText("");
 
         
-        MainPage.add(Tabs);
+        postAuth.add(Tabs);
 
         
 
@@ -46,7 +59,7 @@ public class PostAuth {
      // Variables declaration - do not modify                     
     private javax.swing.JButton CartBtn;
     private javax.swing.JPanel HomePanel;
-    private javax.swing.JPanel MainPage;
+    private javax.swing.JPanel postAuth;
     private javax.swing.JPanel MarketPanel;
     private javax.swing.JPanel ProfilePanel;
     private javax.swing.JTabbedPane Tabs;

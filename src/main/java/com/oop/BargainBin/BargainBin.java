@@ -4,18 +4,22 @@
  */
 package com.oop.BargainBin;
 
+import com.oop.BargainBin.Controllers.AccountController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import com.oop.BargainBin.Controllers.AccountController;
 
 /**
  *
  * @author binup
  */
-public class BargainBin {
 
+public class BargainBin {
+    
+    
     private BargainBin() {
         
         logRegView = new LoginRegisterView();
@@ -40,6 +44,7 @@ public class BargainBin {
     /**
      * Exit the Application
      */
+    
     private void exitForm(java.awt.event.WindowEvent evt) {                          
         System.exit(0);
     }    
@@ -70,9 +75,7 @@ public class BargainBin {
     
     
     public static void main(String args[]) {
-        for (int i = 0; i < 10; i++) {
-            System.out.println(new AccountModel(new LoginRegisterView()).id);
-        }
+        
         BargainBin BargainBinMain = BargainBin.getInst();
         
         
@@ -97,10 +100,15 @@ public class BargainBin {
 //        
 //        System.out.println(main);
     }
+
+    public JFrame getMainFrame() {
+        return mainFrame;
+    }
+    
     
     
     private static BargainBin inst = new BargainBin();
-    JFrame mainFrame;
+    private JFrame mainFrame;
     private AccountController acc;
     private LoginRegisterView logRegView;
     private AccountModel accModel;

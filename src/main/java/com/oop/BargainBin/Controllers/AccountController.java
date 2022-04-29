@@ -2,8 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.oop.BargainBin;
-
+package com.oop.BargainBin.Controllers;
+import com.oop.BargainBin.BargainBin;
+import com.oop.BargainBin.AccountModel;
+import com.oop.BargainBin.AccountService;
+import com.oop.BargainBin.BargainBin;
+import com.oop.BargainBin.LoginRegisterView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -20,8 +24,13 @@ public class AccountController {
 
     
   
-
-    AccountController(LoginRegisterView logRegView, AccountModel accModel) {
+    /**
+     * keeps a version of view and model to control.
+     * view has actionlistner functions that tell control of new data from user.
+     * @param logRegView view of preauth screen
+     * @param accModel view of model of account to fill with user info.
+     */
+    public AccountController(LoginRegisterView logRegView, AccountModel accModel) {
         this.accModel = accModel;
         this.logRegView = logRegView;
         JButton loginBtn = this.logRegView.getLoginbtn();
@@ -29,15 +38,11 @@ public class AccountController {
         loginBtn.addActionListener(new ActionListener() {
                         @Override
 			public void actionPerformed(ActionEvent e) {
-				//get text from user
-				//get text from password
-//				String un  = this.accView.user.getText();
-//				String pas = this.accView.pass.getText();
                                 JTextField us = (JTextField) loginBtn.getParent().getComponent(0);
                                 JTextField pass = (JTextField) loginBtn.getParent().getComponent(1);
                                 getUser(us.getText(), pass.getText());
 				
-				//getUser(un, pas);
+				
 			}
 		});
         
@@ -62,7 +67,12 @@ public class AccountController {
 		});
     }
 
-    
+    /**
+     * 
+     * @param username username string to register into permanent file
+     * @param pasword   password string to register into permanent file
+     * @param AccountType account type either Customer or Seller.
+     */
     public void registerUser(String username, String pasword, String AccountType){
         accModel.id = accountService.getLastUser() + 1;
         accModel.username = username;
@@ -81,6 +91,11 @@ public class AccountController {
         
     }
     
+    /**
+     * 
+     * @param username string username used to look up and get user
+     * @param pasword password must match to get account model
+     */
     public void getUser(String username, String pasword){
         
         AccountModel temp = accountService.getUser(username);
@@ -90,7 +105,7 @@ public class AccountController {
             accModel = temp;
             JOptionPane.showMessageDialog(null, "Success");
             logRegView.getTabs().setVisible(false);
-            BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
+            BargainBin.getInst().getMainFrame().remove(logRegView.getTabs());
             
         }
         
@@ -98,7 +113,9 @@ public class AccountController {
     }
     
     
-
+    /**
+     * fields
+     */
     public AccountModel accModel;
     public LoginRegisterView logRegView;
     public AccountService accountService = new AccountService();
