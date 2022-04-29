@@ -4,13 +4,11 @@
  */
 package com.oop.BargainBin;
 
-import com.oop.BargainBin.Controllers.AccountController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
-import com.oop.BargainBin.Controllers.AccountController;
 
 /**
  *
