@@ -4,6 +4,9 @@
  */
 package com.oop.BargainBin;
 
+import com.oop.BargainBin.controllers.AccountController;
+import com.oop.BargainBin.models.AccountModel;
+import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;

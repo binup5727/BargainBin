@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.oop.BargainBin;
+package com.oop.BargainBin.views;
 
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -17,9 +17,7 @@ public class PostAuth {
         initComponents();
     }
 
-    public JPanel getPostAuth() {
-        return postAuth;
-    }
+
 
     public JTabbedPane getTabs() {
         return Tabs;
@@ -30,14 +28,12 @@ public class PostAuth {
     
     private void initComponents() {
 
-        postAuth = new javax.swing.JPanel();
         Tabs = new javax.swing.JTabbedPane();
         
 
         Tabs.setToolTipText("");
 
         
-        postAuth.add(Tabs);
 
         
 
@@ -59,7 +55,6 @@ public class PostAuth {
      // Variables declaration - do not modify                     
     private javax.swing.JButton CartBtn;
     private javax.swing.JPanel HomePanel;
-    private javax.swing.JPanel postAuth;
     private javax.swing.JPanel MarketPanel;
     private javax.swing.JPanel ProfilePanel;
     private javax.swing.JTabbedPane Tabs;

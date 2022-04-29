@@ -4,6 +4,7 @@
  */
 package com.oop.BargainBin;
 
+import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;

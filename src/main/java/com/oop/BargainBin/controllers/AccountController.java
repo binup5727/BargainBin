@@ -2,17 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.oop.BargainBin;
+package com.oop.BargainBin.controllers;
+import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.BargainBin;
-import com.oop.BargainBin.AccountModel;
-import com.oop.BargainBin.AccountService;
-import com.oop.BargainBin.BargainBin;
-import com.oop.BargainBin.LoginRegisterView;
+import com.oop.BargainBin.services.AccountService;
+import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -79,8 +77,8 @@ public class AccountController {
         accModel.password = pasword;
         accModel.accountType = AccountType;
         if(accountService.getUser(username) == null){
-            accountService.registerUser(accModel);
-            logRegView.getTabs().setVisible(false);
+            JOptionPane.showMessageDialog(null, "Account made");
+            changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
         }else{
             JOptionPane.showMessageDialog(null, "Account already made");
@@ -104,12 +102,22 @@ public class AccountController {
         }else{
             accModel = temp;
             JOptionPane.showMessageDialog(null, "Success");
-            logRegView.getTabs().setVisible(false);
-            BargainBin.getInst().getMainFrame().remove(logRegView.getTabs());
+            changeView();
+            
             
         }
         
     
+    }
+    
+    
+    public void changeView(){
+        logRegView.getTabs().setVisible(false);
+        BargainBin.getInst().getMainFrame().remove(logRegView.getTabs());
+        if(accModel.accountType.equals("Customer"))
+        {
+            //new CustomerAccount(accModel);
+        }
     }
     
     
@@ -119,7 +127,7 @@ public class AccountController {
     public AccountModel accModel;
     public LoginRegisterView logRegView;
     public AccountService accountService = new AccountService();
-
+    public Account
 
 }
 
