@@ -4,6 +4,7 @@
  */
 package com.oop.BargainBin.patterns;
 
+
 /**
  *
  * @author binup

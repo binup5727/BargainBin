@@ -8,8 +8,12 @@ import com.oop.BargainBin.BargainBin;
 import com.oop.BargainBin.controllers.ProductController;
 import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.models.ProductModel;
+import com.oop.BargainBin.views.LoginRegisterView;
 import com.oop.BargainBin.views.PostAuthView;
-import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.event.WindowEvent;
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
 
 /**
  * Class that implements the strategy pattern to load the customer views
@@ -33,10 +37,13 @@ public class CustomerAccount implements AccountType{
         PostAuthView postAuthView = new PostAuthView("customer");
 
         ProductModel model = new ProductModel();
-        ProductController controller = new ProductController(model, postAuthView);
-        postAuthView.getTabs().setVisible(true);
+        controller = new ProductController(model, postAuthView);
+        
         BargainBin.getInst().getMainFrame().add(postAuthView.getTabs());
+        postAuthView.getTabs().setVisible(true);
     }
-
+    
+    
+    public ProductController controller;
 
 }
