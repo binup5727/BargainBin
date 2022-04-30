@@ -79,16 +79,12 @@ public class AccountController {
         accModel.password = pasword;
         accModel.accountType = AccountType;
         if(accountService.getUser(username) == null){
-            JOptionPane.showMessageDialog(null, "Account made");
+            JOptionPane.showMessageDialog(null, "Account created successfully");
             changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
         }else{
-            JOptionPane.showMessageDialog(null, "Account already made");
+            JOptionPane.showMessageDialog(null, "Account already existing");
         }
-        
-        
-        
-        
     }
     
     /**
