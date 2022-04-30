@@ -25,10 +25,10 @@ public class AccountService {
      * saves and gets data from permanent file
      */
     public AccountService() {
-    this.file =("/temp/Accounts.txt");
+    this.file =("/Accounts.txt");
     
     try {
-      File f = new File("/temp/Accounts.txt");
+      File f = new File("/Accounts.txt");
       if (f.createNewFile()) {
         System.out.println("File created: " + f.getName());
         this.file = f.getPath(); 

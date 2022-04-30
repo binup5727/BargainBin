@@ -5,37 +5,38 @@
 package com.oop.BargainBin.patterns;
 
 import com.oop.BargainBin.BargainBin;
+import com.oop.BargainBin.controllers.ProductController;
 import com.oop.BargainBin.models.AccountModel;
-import com.oop.BargainBin.views.PostAuth;
+import com.oop.BargainBin.models.ProductModel;
+import com.oop.BargainBin.views.PostAuthView;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
- *
- * @author binup
+ * Class that implements the strategy pattern to load the customer views
  */
 public class CustomerAccount implements AccountType{
 
-    CustomerAccount(AccountModel aThis) {
-        
+    /**
+     * Constructor
+     * @param accountModel accountModel
+     */
+    public CustomerAccount(AccountModel accountModel) {
         loadUserPlatform();
     }
 
     @Override
     public void loadUserPlatform() {
-        PostAuth page = new PostAuth();
-        //productsView;
-        
-        page.getTabs().add(new JPanel());
-        
-        //barbainbin . get inst to get main window fram and add any panel then set visibility to show it
-        //add 
-        //BargainBin.getInst().Frame.add(whatever jpanel );
-        //page.getTabs().visibillity(true);
-        
-        
+        initView();
     }
-    
-    
-    
+
+    private void initView(){
+        PostAuthView postAuthView = new PostAuthView("customer");
+
+        ProductModel model = new ProductModel();
+        ProductController controller = new ProductController(model, postAuthView);
+        postAuthView.getTabs().setVisible(true);
+        BargainBin.getInst().getMainFrame().add(postAuthView.getTabs());
+    }
+
+
 }

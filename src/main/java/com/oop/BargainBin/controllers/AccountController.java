@@ -6,6 +6,7 @@ package com.oop.BargainBin.controllers;
 import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.BargainBin;
 import com.oop.BargainBin.patterns.AccountType;
+import com.oop.BargainBin.patterns.CustomerAccount;
 import com.oop.BargainBin.services.AccountService;
 import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.event.ActionEvent;
@@ -110,17 +111,20 @@ public class AccountController {
         
     
     }
-    
-    
+
+    /**
+     * Navigating to the corresponding postAuth view based on the Customer type or the Seller type
+     */
     public void changeView(){
         logRegView.getTabs().setVisible(false);
         BargainBin.getInst().getMainFrame().remove(logRegView.getTabs());
-        if(accModel.accountType.equals("Customer"))
-        {
-            //new CustomerAccount(accModel);
+        if(accModel.accountType.equals("Customer")) {
+            new CustomerAccount(accModel);
+        } else if(accModel.accountType.equals("Seller")){
+
         }
     }
-    
+
     
     /**
      * fields
