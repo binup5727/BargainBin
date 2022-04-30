@@ -4,7 +4,7 @@
  */
 package com.oop.BargainBin.patterns;
 
-import com.oop.BargainBin.views.PostAuth;
+import com.oop.BargainBin.views.PostAuthView;
 
 /**
  *

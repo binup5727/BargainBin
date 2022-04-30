@@ -25,10 +25,10 @@ public class AccountService {
      * saves and gets data from permanent file
      */
     public AccountService() {
-    this.file =("/temp/Accounts.txt");
+    this.file = "C:\\Users\\binup\\OneDrive\\Documents\\NetBeansProjects\\BargainBin\\src\\main\\java\\com\\oop\\BargainBin\\Db\\Accounts.txt";
     
     try {
-      File f = new File("/temp/Accounts.txt");
+      File f = new File(this.file);
       if (f.createNewFile()) {
         System.out.println("File created: " + f.getName());
         this.file = f.getPath(); 
@@ -90,10 +90,12 @@ public class AccountService {
      */
     public  AccountModel getUser(String username){
         ArrayList<AccountModel> accounts = null;
+        System.out.println(this.file);
         try {
             accounts = SerializationService.deSerialize(new FileInputStream(this.file));
             
         } catch (FileNotFoundException ex) {
+            
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
@@ -114,7 +116,7 @@ public class AccountService {
     }
     
     /**
-     * auxillary function to get the last added accounts id
+     * auxiliary function to get the last added accounts id
      * @return id 
      */
     public int getLastUser() {
@@ -123,8 +125,10 @@ public class AccountService {
             accounts = SerializationService.deSerialize(new FileInputStream(this.file));
             
         } catch (FileNotFoundException ex) {
+            //System.out.println(accounts);
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | ClassNotFoundException ex) {
+            //System.out.println(accounts);
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
         }
         
