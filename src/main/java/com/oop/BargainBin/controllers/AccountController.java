@@ -78,6 +78,7 @@ public class AccountController {
         accModel.password = pasword;
         accModel.accountType = AccountType;
         if(accountService.getUser(username) == null){
+            accountService.registerUser(accModel);
             JOptionPane.showMessageDialog(null, "Account made");
             changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
