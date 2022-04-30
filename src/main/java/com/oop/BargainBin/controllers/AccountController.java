@@ -79,6 +79,7 @@ public class AccountController {
         accModel.password = pasword;
         accModel.accountType = AccountType;
         if(accountService.getUser(username) == null){
+            accountService.registerUser(accModel);
             JOptionPane.showMessageDialog(null, "Account made");
             changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
@@ -119,7 +120,7 @@ public class AccountController {
         logRegView.getTabs().setVisible(false);
         BargainBin.getInst().getMainFrame().remove(logRegView.getTabs());
         if(accModel.accountType.equals("Customer")) {
-            new CustomerAccount(accModel);
+            account = new CustomerAccount(accModel);
         } else if(accModel.accountType.equals("Seller")){
 
         }

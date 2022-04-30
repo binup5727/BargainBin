@@ -11,7 +11,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,10 +24,10 @@ public class AccountService {
      * saves and gets data from permanent file
      */
     public AccountService() {
-    this.file =("/Accounts.txt");
+    this.file =("temp/Accounts.txt");
     
     try {
-      File f = new File("/Accounts.txt");
+      File f = new File(this.file);
       if (f.createNewFile()) {
         System.out.println("File created: " + f.getName());
         this.file = f.getPath(); 
@@ -37,7 +36,6 @@ public class AccountService {
       }
     } catch (IOException e) {
       System.out.println("An error occurred.");
-      e.printStackTrace();
         }
     
         
