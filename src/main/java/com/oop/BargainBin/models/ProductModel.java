@@ -21,11 +21,10 @@ public class ProductModel {
      * @param price product price
      * @param description product description
      * @param category product category
-     * @param sellerId product seller
      * @param cartCount cart count
      * @param quantityAvailable quantityAvailable
      */
-    public ProductModel(String name, float price, String description, String category, int sellerId, int quantityAvailable, int cartCount) {
+    public ProductModel(String name, float price, String description, String category, int quantityAvailable, int cartCount) {
         this.name = name;
         this.price = price;
         this.description = description;

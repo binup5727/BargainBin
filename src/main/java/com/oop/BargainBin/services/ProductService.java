@@ -22,8 +22,8 @@ public class ProductService {
         ArrayList<ProductModel> productList = new ArrayList<ProductModel>();
         try {
             //replace with the database coding
-            ProductModel model1 = new ProductModel("Apple", 10, "this is an apple", "Fruit", 1,5, 0);
-            ProductModel model2 = new ProductModel("Soap", 10, "this is a soap", "Bathing", 1, 2, 0);
+            ProductModel model1 = new ProductModel("Apple", 10, "this is an apple", "Fruit", 5, 0);
+            ProductModel model2 = new ProductModel("Soap", 10, "this is a soap", "Bathing",  2, 0);
             productList.add(model1);
             productList.add(model2);
 
