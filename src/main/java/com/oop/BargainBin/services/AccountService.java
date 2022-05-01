@@ -24,21 +24,27 @@ public class AccountService {
      * saves and gets data from permanent file
      */
     public AccountService() {
-    this.file =("temp/Accounts.txt");
-    
-    try {
-      File f = new File(this.file);
-      if (f.createNewFile()) {
-        System.out.println("File created: " + f.getName());
-        this.file = f.getPath(); 
-      } else {
-        System.out.println("File already exists.");
-      }
-    } catch (IOException e) {
-      System.out.println("An error occurred.");
+        this.file = System.getProperty("user.dir") + "/src/Db/Accounts.txt";
+        String dirS = System.getProperty("user.dir") + "/src/Db";
+        File dir = new File(dirS);
+        if(dir.mkdirs()){
+            System.out.println("directory made");
+        }else{
+            System.out.println("Failed to make directory");
         }
-    
-        
+        try {
+            File f = new File(this.file);
+            if (f.createNewFile()) {
+                System.out.println("File created: " + f.getName());
+                this.file = f.getPath();
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+        }
+
+
     }
     
     
@@ -52,8 +58,6 @@ public class AccountService {
         System.out.println(acc.username);
         try {
             accounts = SerializationService.deSerialize(new FileInputStream(this.file));
-            
-            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | ClassNotFoundException ex) {
@@ -74,9 +78,6 @@ public class AccountService {
         } catch (IOException ex) {
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
     }
     
 

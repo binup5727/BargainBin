@@ -5,8 +5,8 @@
 package com.oop.BargainBin.controllers;
 import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.BargainBin;
-import com.oop.BargainBin.patterns.AccountType;
-import com.oop.BargainBin.patterns.CustomerAccount;
+import com.oop.BargainBin.strategyPattern.AccountType;
+import com.oop.BargainBin.strategyPattern.CustomerAccount;
 import com.oop.BargainBin.services.AccountService;
 import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.event.ActionEvent;
@@ -81,7 +81,7 @@ public class AccountController {
         if(accountService.getUser(username) == null){
 
             accountService.registerUser(accModel);
-            JOptionPane.showMessageDialog(null, "Account made");
+            JOptionPane.showMessageDialog(null, "Account created successfully");
 
             changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
@@ -102,13 +102,12 @@ public class AccountController {
             JOptionPane.showMessageDialog(null, "Invalid Username Or Password");
         }else{
             accModel = temp;
-            JOptionPane.showMessageDialog(null, "Success");
             changeView();
-            
-            
+
+
         }
-        
-    
+
+
     }
 
     /**
