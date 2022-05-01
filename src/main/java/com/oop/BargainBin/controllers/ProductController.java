@@ -140,7 +140,7 @@ public class ProductController {
                 row[i][1] = list.get(i).getPrice();
                 row[i][2] = list.get(i).getCategory();
                 row[i][3] = list.get(i).getDescription();
-                row[i][5] = list.get(i).getSold();
+                
             }
             //Set the values to the model for the JTable
             view.setModel(row);
