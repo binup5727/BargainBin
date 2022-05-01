@@ -38,7 +38,7 @@ public class CustomerAccount implements AccountType{
 
         ProductModel model = new ProductModel();
         controller = new ProductController(model, postAuthView);
-        
+        controller.getClass();
         BargainBin.getInst().getMainFrame().add(postAuthView.getTabs());
         postAuthView.getTabs().setVisible(true);
     }

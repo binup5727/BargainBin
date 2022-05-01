@@ -5,14 +5,11 @@
 package com.oop.BargainBin.services;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.WriteAbortedException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -52,7 +49,9 @@ public class SerializationService {
         T o = null;
         try{
             o = (T)in.readObject();
+            System.out.println("read object");
         }catch(WriteAbortedException e){
+            System.out.println("read null");
             return null;
             
         }

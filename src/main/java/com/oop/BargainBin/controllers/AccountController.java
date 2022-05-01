@@ -7,6 +7,7 @@ import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.BargainBin;
 import com.oop.BargainBin.patterns.AccountType;
 import com.oop.BargainBin.patterns.CustomerAccount;
+import com.oop.BargainBin.patterns.SellerAccount;
 import com.oop.BargainBin.services.AccountService;
 import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.event.ActionEvent;
@@ -122,7 +123,7 @@ public class AccountController {
         if(accModel.accountType.equals("Customer")) {
             account = new CustomerAccount(accModel);
         } else if(accModel.accountType.equals("Seller")){
-
+            account = new SellerAccount(accModel);
         }
     }
 

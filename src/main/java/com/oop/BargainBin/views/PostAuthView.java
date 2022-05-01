@@ -35,7 +35,12 @@ public class PostAuthView extends JFrame{
             tabs.setPreferredSize(new Dimension(800, 800));
             tabs.setMinimumSize(new Dimension(800, 800));
             tabs.setMaximumSize(new Dimension(800, 800));
+        }else{
+            tabs.setPreferredSize(new Dimension(900, 900));
+            tabs.setMinimumSize(new Dimension(900, 900));
+            tabs.setMaximumSize(new Dimension(900, 900));
         }
+        
     }
 
     /**

@@ -23,7 +23,7 @@ public class AccountService {
      * create service to use for account controller
      * saves and gets data from permanent file
      */
-    public AccountService() {
+   public AccountService() {
     this.file = System.getProperty("user.dir") + "/src/Db/Accounts.txt";
     String dirS = System.getProperty("user.dir") + "/src/Db";
     File dir = new File(dirS);
@@ -43,8 +43,8 @@ public class AccountService {
     } catch (IOException e) {
       System.out.println("An error occurred.");
         }
-    
-        
+
+
     }
     
     
