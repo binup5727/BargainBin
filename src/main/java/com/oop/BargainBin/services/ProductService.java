@@ -52,13 +52,13 @@ public class ProductService {
         }
         return productList;
     }
-    public void saveProduct(ArrayList<ProductModel> pro){
+    public void saveProduct(ProductModel pro){
         
         
         try {
-            ArrayList<ArrayList<String>> productLst = new ArrayList<>();
-            productLst = toArray(pro);
-            SerializationService.Serialize(new FileOutputStream(file), productLst);
+            ArrayList<ProductModel> productLst = getProductList();
+            productLst.add(pro);
+            SerializationService.Serialize(new FileOutputStream(file), toArray(productLst));
             
             
         } catch (Exception ex) {
@@ -76,16 +76,16 @@ public class ProductService {
         ArrayList<ArrayList<String>> Arrlst = new ArrayList<>();
         for (int i = 0; i < mods.size(); i++) {
             Arrlst.add(new ArrayList<>());
-            for (int j = 0; j < 6; j++) {
-                Arrlst.get(i).add(Integer.toString(mods.get(i).getId()));
-                Arrlst.get(i).add(mods.get(i).getName());
-                Arrlst.get(i).add(Float.toString(mods.get(i).getPrice()));
-                Arrlst.get(i).add(mods.get(i).getDescription());
-                Arrlst.get(i).add(mods.get(i).getCategory());
-                Arrlst.get(i).add(Boolean.toString(mods.get(i).getSold()));
+            
+            Arrlst.get(i).add(Integer.toString(mods.get(i).getId()));
+            Arrlst.get(i).add(mods.get(i).getName());
+            Arrlst.get(i).add(Float.toString(mods.get(i).getPrice()));
+            Arrlst.get(i).add(mods.get(i).getDescription());
+            Arrlst.get(i).add(mods.get(i).getCategory());
+            Arrlst.get(i).add(Boolean.toString(mods.get(i).getSold()));
                 
                 
-            }
+            
         }
         
         

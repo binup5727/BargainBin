@@ -44,6 +44,7 @@ public class Product{
 	private JLabel lblNewLabel_3;
         public final JButton addBtn;
         public final JButton removeBtn;
+        public final JTextField comboBox;
         
 
 	/**
@@ -184,14 +185,13 @@ public class Product{
 		lblNewLabel_1_4.setBounds(32, 299, 72, 14);
 		contentPane.add(lblNewLabel_1_4);
 		
-//		String[] products = {"name","category", "price range"};
-//		JComboBox comboBox = new JComboBox(products);
-//		comboBox.setBounds(200, 341, 174, 22);
-//		contentPane.add(comboBox);
+		comboBox = new JTextField();
+		comboBox.setBounds(200, 341, 174, 22);
+		contentPane.add(comboBox);
 //		
-//		lblNewLabel_2 = new JLabel("Filter");
-//		lblNewLabel_2.setBounds(32, 349, 72, 14);
-//		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2 = new JLabel("Quantity");
+		lblNewLabel_2.setBounds(32, 349, 72, 14);
+		contentPane.add(lblNewLabel_2);
 		
 		addBtn = new JButton("Add Item");
 		addBtn.setForeground(Color.WHITE);

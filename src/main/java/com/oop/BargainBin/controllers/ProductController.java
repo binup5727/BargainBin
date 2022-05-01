@@ -95,9 +95,9 @@ public class ProductController {
     }
     
     public void addProduct(String Name, Float price, String description, String category){
-        pro = new ProductModel(accId, Name, price, description, category, false);
+        pro = new ProductModel(accId, Name, price, description, category);
         products.add(pro);
-        service.saveProduct(products);
+        service.saveProduct(pro);
         
         table = new DefaultTableModel(getProductsSeller(), new String[] {
 				"Product ID", "Name", "Price", "Description", "Category", "Sold"

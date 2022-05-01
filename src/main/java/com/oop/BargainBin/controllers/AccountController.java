@@ -82,7 +82,6 @@ public class AccountController {
         if(accountService.getUser(username) == null){
 
             accountService.registerUser(accModel);
-            JOptionPane.showMessageDialog(null, "Account made");
 
             changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
@@ -103,7 +102,6 @@ public class AccountController {
             JOptionPane.showMessageDialog(null, "Invalid Username Or Password");
         }else{
             accModel = temp;
-            JOptionPane.showMessageDialog(null, "Success");
             changeView();
             
             
