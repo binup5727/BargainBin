@@ -54,4 +54,12 @@ public class ProductService {
             return false;
         }
     }
+
+    /**
+     * Delete the selected product from the cart
+     * @param model product model
+     */
+    public void deleteFromCart(ProductModel model){
+        Cart.getInstance().getCartItems().removeIf(p -> p.getName() == model.getName());
+    }
 }

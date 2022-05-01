@@ -37,6 +37,10 @@ public class Cart {
         return products;
     }
 
+    /**
+     * Get the item counts in the cart
+     * @return item count
+     */
     public int getCartItemsCount(){
         int count = 0;
         for (ProductModel product: products) {
@@ -44,6 +48,23 @@ public class Cart {
         }
         return count;
     }
+
+    /**
+     * Get the total amount in the cart
+     * @return total amount in the cart
+     */
+    public float getCartAmount(){
+        float cartAmount=0;
+        for (ProductModel product: products) {
+            cartAmount += product.getCartCount()* product.getPrice();
+        }
+        return cartAmount;
+    }
+
+    /**
+     * Return the cart items
+     * @return cart items
+     */
     public ArrayList<ProductModel> getCartItems(){
         return products;
     }
