@@ -9,7 +9,10 @@ public class ProductModel {
     private float price;
     private String description;
     private String category;
-    private boolean sold;
+    private int sold = 0;
+    private int cartCount = 0;
+    private int quantityAvailable;
+    
 
     /**
      * Constructor
@@ -21,15 +24,43 @@ public class ProductModel {
      * @param sold
      * @param sellerId product seller
      */
-    public ProductModel(int id, String name, float price, String description, String category, boolean sold) {
+    public ProductModel(int id, String name, float price, String description, String category, int quantityAvailable) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
+        this.cartCount = cartCount;
+        this.quantityAvailable = quantityAvailable;
+    }
+
+    public ProductModel() {
+    }
+
+    public void setSold(int sold) {
         this.sold = sold;
     }
-    public ProductModel(){}
+
+    public void setCartCount(int cartCount) {
+        this.cartCount = cartCount;
+    }
+
+    public void setQuantityAvailable(int quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+    public int getSold() {
+        return sold;
+    }
+
+    public int getCartCount() {
+        return cartCount;
+    }
+
+    public int getQuantityAvailable() {
+        return quantityAvailable;
+    }
+
 
     public int getId(){
         return id;
@@ -46,15 +77,7 @@ public class ProductModel {
     public String getCategory(){
         return category;
     }
-    public boolean getSold(){
-        return this.sold;
-    }
 
-    public void setSold(boolean sold) {
-        this.sold = sold;
-    }
-
-    
     public void setId(int id) {
         this.id = id;
     }

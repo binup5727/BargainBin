@@ -135,13 +135,13 @@ public class ProductController {
         //Arranging to an object multi dimentional array to populate in the table
         Object[][] row = new Object[list.size()][5];
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getSold() == false){
+            
                 row[i][0] = list.get(i).getName();
                 row[i][1] = list.get(i).getPrice();
                 row[i][2] = list.get(i).getCategory();
                 row[i][3] = list.get(i).getDescription();
                 
-            }
+            
             //Set the values to the model for the JTable
             view.setModel(row);
         }

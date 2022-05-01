@@ -1,5 +1,6 @@
 package com.oop.BargainBin.services;
 
+import com.oop.BargainBin.models.InventoryModel;
 import com.oop.BargainBin.models.ProductModel;
 import java.io.File;
 import java.io.FileInputStream;
@@ -67,7 +68,11 @@ public class ProductService {
         }
         
         
-    }
+}
+    
+
+        
+}
 //    public void deleteProduct(){
 //        
 //    }
