@@ -24,8 +24,14 @@ public class AccountService {
      * saves and gets data from permanent file
      */
     public AccountService() {
-    this.file = "C:\\Users\\binup\\OneDrive\\Documents\\NetBeansProjects\\BargainBin\\src\\main\\java\\com\\oop\\BargainBin\\Db\\Accounts.txt";
-    
+    this.file = System.getProperty("user.dir") + "/src/Db/Accounts.txt";
+    String dirS = System.getProperty("user.dir") + "/src/Db";
+    File dir = new File(dirS);
+    if(dir.mkdirs()){
+        System.out.println("directory made");
+    }else{
+        System.out.println("Failed to make directory");
+    }
     try {
       File f = new File(this.file);
       if (f.createNewFile()) {
