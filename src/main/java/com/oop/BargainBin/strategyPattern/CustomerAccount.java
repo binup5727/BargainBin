@@ -34,15 +34,15 @@ public class CustomerAccount implements AccountType{
     }
 
     private void initView(){
-    //Initializing the postAuthView based on the user type
+
+        //Initializing the postAuthView based on the user type
         PostAuthView postAuthView = new PostAuthView("customer");
-
         ProductModel model = new ProductModel();
-        controller = new ProductController(model, postAuthView);
-        
-        BargainBin.getInst().getMainFrame().add(postAuthView.getTabs());
-        postAuthView.getTabs().setVisible(true);
+        new ProductController(model, postAuthView);
 
+        postAuthView.getPanel().setVisible(true);
+        postAuthView.getTabs().setVisible(true);
+        BargainBin.getInst().getMainFrame().add(postAuthView.getPanel());
     }
     
     
