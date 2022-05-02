@@ -76,7 +76,7 @@ public class AccountController {
         if(accountService.getUser(username) == null){
 
             accountService.registerUser(accModel);
-
+            JOptionPane.showMessageDialog(null, "Account created successfully");
             changeView();
             //BargainBin.getInst().mainFrame.remove(logRegView.getTabs());
         }else{
