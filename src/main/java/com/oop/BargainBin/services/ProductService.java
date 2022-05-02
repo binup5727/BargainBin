@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 /**
  * @author Binup
+ * @author Athul
  * Product service class for the product related methods
  */
 public class ProductService {
