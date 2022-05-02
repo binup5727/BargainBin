@@ -14,9 +14,12 @@ public class ProductModel {
     private String category;
     private int cartCount;
     private int quantityAvailable;
+    private int sold = 0;
+    private int id;
 
     /**
      * Constructor
+     * @param id id
      * @param name product name
      * @param price product price
      * @param description product description
@@ -24,13 +27,14 @@ public class ProductModel {
      * @param cartCount cart count
      * @param quantityAvailable quantityAvailable
      */
-    public ProductModel(String name, float price, String description, String category, int quantityAvailable, int cartCount) {
+    public ProductModel(int id, String name, float price, String description, String category, int quantityAvailable, int cartCount) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
         this.cartCount = cartCount;
         this.quantityAvailable = quantityAvailable;
+        this.id = id;
     }
     public ProductModel(){}
 
@@ -49,6 +53,10 @@ public class ProductModel {
     }
     public int getCartCount(){return cartCount;}
     public int getQuantityAvailable(){return quantityAvailable;}
+    public int getSold(){return sold;}
+    public int getId(){
+        return id;
+    }
 
     //Setters
     public void setName(String name){
@@ -65,6 +73,12 @@ public class ProductModel {
     }
     public void setCartCount(int cartCount){
         this.cartCount = cartCount;
+    }
+    public void setSold(int sold){
+        this.sold = sold;
+    }
+    public void setId(int id){
+        this.id = id;
     }
     public void setQuantityAvailable(int quantityAvailable){
         this.quantityAvailable = quantityAvailable;

@@ -9,10 +9,7 @@ package com.oop.BargainBin.views;
  * @author binup
  */
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.awt.SystemColor;
@@ -53,22 +50,6 @@ public class LoginRegisterView implements Serializable{
         JButton btnNewButton;
         JButton btnNewButton2;
 
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Login window = new Login();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
 	/**
 	 * Create the application.
 	 */
@@ -101,9 +82,10 @@ public class LoginRegisterView implements Serializable{
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.getContentPane().setLayout(null);
 		tabs = new javax.swing.JTabbedPane();
-                tabs.setPreferredSize(new Dimension(800,800));
-                tabs.setMinimumSize(new Dimension(800,800));
-                tabs.setMaximumSize(new Dimension(800,800));
+                tabs.setPreferredSize(new Dimension(1500,1500));
+                tabs.setMinimumSize(new Dimension(1500,1500));
+                tabs.setMaximumSize(new Dimension(1500,1500));
+
 //		panel = new JPanel();
 //		panel.setBackground(SystemColor.textHighlight);
 //		panel.setBounds(10, 11, 509, 396);
