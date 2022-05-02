@@ -14,9 +14,6 @@ import java.util.Locale;
 /**
  * @author Athul
  * @author Binup
- * 
- * 
- * @author rev Remekie
  *
  * Master view for the post auth functionalities
  *
