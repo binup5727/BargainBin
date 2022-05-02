@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.oop.BargainBin.controllers;
 import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.BargainBin;
@@ -50,10 +47,7 @@ public class AccountController {
         regBtn.addActionListener(new ActionListener() {
                         @Override
 			public void actionPerformed(ActionEvent e) {
-				//get text from user
-				//get text from password
-//				String un  = this.accView.user.getText();
-//				String pas = this.accView.pass.getText();
+
                                 JTextField us = (JTextField) regBtn.getParent().getComponent(0);
                                 JTextField pass = (JTextField) regBtn.getParent().getComponent(1);
                                 JComboBox accType = (JComboBox) regBtn.getParent().getComponent(5);

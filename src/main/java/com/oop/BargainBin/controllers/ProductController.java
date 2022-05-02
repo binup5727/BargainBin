@@ -121,6 +121,10 @@ public class ProductController {
 
     }
     
+    /**
+     * 
+     * @return 2d array to show in table view for inventory of seller.
+     */
     public Object[][] getProductsSeller(){
         ArrayList<ProductModel> list = products;
 
@@ -144,11 +148,12 @@ public class ProductController {
 
     /**
      *
-     * @param Name
-     * @param price
-     * @param description
-     * @param category
-     * @param quant
+     * @param Name name of item
+     * @param price of item
+     * @param description of item
+     * @param category of item
+     * @param quant amount available to buy.
+     * adds product to permanent files
      */
     public void addProduct(String Name, Float price, String description, String category, String quant){
         pro = new ProductModel(accId, Name, price, description, category, Integer.parseInt(quant));
@@ -162,6 +167,10 @@ public class ProductController {
         this.Inventory.table_2.setModel(table);
         
     }
+    /**
+     * 
+     * @param name searches name if found deletes item from inventory. 
+     */
     public void deleteProduct(String name){
         Iterator<ProductModel> iter = products.iterator();
         while (iter.hasNext()) {

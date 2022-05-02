@@ -18,6 +18,7 @@ public class AccountModel implements Serializable{
     /**
      * 
      * @param loginView has login view of preauth view
+     * empty initially to be filled when sign in or registration happens.
      */
     public AccountModel(LoginRegisterView loginView) {
         
@@ -34,7 +35,9 @@ public class AccountModel implements Serializable{
     
     
     
-    
+    /**
+     * field values of account and view attached to model.    
+    */
     LoginRegisterView loginView;
     public int id;
     public String username;

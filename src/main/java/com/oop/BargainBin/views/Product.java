@@ -45,7 +45,7 @@ public class Product{
 
 
 	/**
-	 * Create the frame.
+	 * Create the view for seller with tabs for the seller account to populate with products.
 	 */
 	public Product() {
 		//getContentPane().setLayout(null);
@@ -66,11 +66,7 @@ public class Product{
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 24));
 		lblNewLabel_3.setBounds(391, 33, 139, 32);
 		panel_1.add(lblNewLabel_3);
-		
-//		textField_5 = new JTextField();
-//		textField_5.setBounds(200, 99, 174, 20);
-//		contentPane.add(textField_5);
-//		textField_5.setColumns(10);
+
 		
 		textField_6 = new JTextField();
 		textField_6.setBounds(200, 150, 174, 20);
@@ -92,9 +88,7 @@ public class Product{
 		textField_9.setColumns(10);
 		contentPane.add(textField_9);
 		
-//		JLabel lblNewLabel_1 = new JLabel("Product ID");
-//		lblNewLabel_1.setBounds(32, 102, 72, 14);
-//		contentPane.add(lblNewLabel_1);
+
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Name");
 		lblNewLabel_1_1.setBounds(32, 153, 46, 14);

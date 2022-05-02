@@ -12,7 +12,7 @@ package com.oop.BargainBin.strategyPattern;
 public interface AccountType {
 
     /**
-     *
+     *strategy each account sets up different views as strategy pattern.
      */
     
     public void loadUserPlatform();

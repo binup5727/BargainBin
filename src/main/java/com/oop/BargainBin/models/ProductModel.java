@@ -35,7 +35,9 @@ public class ProductModel {
         this.cartCount = 0;
         this.quantityAvailable = quantityAvailable;
     }
-
+    /**
+     * getters and setters for all field values
+     */
     public ProductModel() {
     }
 

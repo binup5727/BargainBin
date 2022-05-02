@@ -12,7 +12,11 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * 
+ * creates revenue view with all components
+ * gets and outputs data on sales.
+ */
 public class Revenue{
 
 	public JPanel contentPane;
@@ -33,25 +37,7 @@ public class Revenue{
 	private JTextField textField_6;
 	private JLabel lblNewLabel_4;
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Revenue frame = new Revenue();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Revenue() {
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setBounds(100, 100, 851, 541);
@@ -124,21 +110,7 @@ public class Revenue{
 		btnNewButton.setBackground(Color.BLUE);
 		btnNewButton.setBounds(143, 286, 89, 23);
 		contentPane.add(btnNewButton);
-		
-//		btnNewButton_1 = new JButton("Clear");
-//		btnNewButton_1.addActionListener(new ActionListener() {
-//                        @Override
-//			public void actionPerformed(ActionEvent e) {
-//				textField.setText("");
-//				textField_1.setText("");
-//				textField_2.setText("");
-//				textField_3.setText("");
-//			}
-//		});
-//		btnNewButton_1.setForeground(Color.WHITE);
-//		btnNewButton_1.setBackground(Color.BLUE);
-//		btnNewButton_1.setBounds(333, 286, 89, 23);
-//		contentPane.add(btnNewButton_1);
+
 		
 		textField_3 = new JTextField();
 		textField_3.setBounds(238, 357, 160, 20);

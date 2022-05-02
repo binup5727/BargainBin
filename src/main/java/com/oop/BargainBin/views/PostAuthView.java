@@ -48,6 +48,7 @@ public class PostAuthView extends JFrame{
             tabs.setMinimumSize(new Dimension(800, 800));
             tabs.setMaximumSize(new Dimension(800, 800));
             buttonCart = new JButton("Cart : "+ cartCount + ". Total Amount : " + 0);
+            
         }
         
     }

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.oop.BargainBin;
 
 import com.oop.BargainBin.controllers.AccountController;
@@ -60,17 +57,7 @@ public class BargainBin {
     //step 1 bargain bin single instance made in main
     //login view and account model constructed.
     //acount controller constructed pass login vie and account model.
-    /**
-     * when user registers or logs in
-     * account controller will populate account model
-     * account controller will create instance of account class seller or customer
-     * account controller will temp make copy or main frame
-     * account controller will call parent of login view panel and remove it
-     * then the specific version of account type class seller or buyer method strategy pattern
-     * Stretegy pattern will make the panels/views for each account type and do  mainframe.add()
-     * 
-     */
-    
+
     
     
     public static void main(String args[]) {

@@ -22,6 +22,7 @@ public class AccountService {
     /**
      * create service to use for account controller
      * saves and gets data from permanent file
+     * makes directory Db and creates file Account.txt to save data into.
      */
     public AccountService() {
         this.file = System.getProperty("user.dir") + "/src/Db/Accounts.txt";
@@ -52,6 +53,8 @@ public class AccountService {
      * 
      * @param acc uses account model acc to store into permanent file
      * if empty makes new array list to add acc to
+     * serialization throws exceptions we catch here. 
+     * if error we send back empty arraylist to show.
      */
     public void registerUser(AccountModel acc){
         ArrayList<AccountModel> accounts = null;
@@ -86,6 +89,7 @@ public class AccountService {
      * @param username username string used to search arraylist of accounts
      * saved in file.
      * @return the account model of user if in file
+     * get all users and find username and return that account model from permenant file.
      */
     public  AccountModel getUser(String username){
         ArrayList<AccountModel> accounts = null;
@@ -117,6 +121,8 @@ public class AccountService {
     /**
      * auxiliary function to get the last added accounts id
      * @return id 
+     * allows for unique incremented id for all users.
+     * maps to products for sellers.
      */
     public int getLastUser() {
         ArrayList<AccountModel> accounts = null;

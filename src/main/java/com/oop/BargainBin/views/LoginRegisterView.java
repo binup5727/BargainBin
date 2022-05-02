@@ -53,21 +53,6 @@ public class LoginRegisterView implements Serializable{
         JButton btnNewButton;
         JButton btnNewButton2;
 
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Login window = new Login();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	/**
 	 * Create the application.
@@ -93,15 +78,16 @@ public class LoginRegisterView implements Serializable{
 
 	/**
 	 * Initialize the contents of the frame.
+         * login and registration view for intiail screen.
 	 */
 	private void initialize() {
 
 		tabs = new javax.swing.JTabbedPane();
-                tabs.setPreferredSize(new Dimension(800,800));
-                tabs.setMinimumSize(new Dimension(800,800));
-                tabs.setMaximumSize(new Dimension(800,800));
+                tabs.setPreferredSize(new Dimension(1500,1500));
+                tabs.setMinimumSize(new Dimension(1500,1500));
+                tabs.setMaximumSize(new Dimension(1500,1500));
 
-
+                //spacing for input places.
                 int x = 51;
                 
                 
@@ -205,18 +191,7 @@ public class LoginRegisterView implements Serializable{
 		panel_2.add(btnNewButton2);
                 
                 
-		
-//		lblNewLabel_2 = new JLabel("");
-//		lblNewLabel_2.setBounds(-205, 0, 509, 396);
-//		ImageIcon icon = new ImageIcon(this.getClass().getResource("/login.jpg"));
-//		lblNewLabel_2.setIcon(icon);
-//		panel_1.add(lblNewLabel_2);
-//		
-//		lblNewLabel_3 = new JLabel("");
-//		lblNewLabel_3.setBounds(0, 0, 204, 396);
-//		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/login.jpg"));
-//		lblNewLabel_3.setIcon(icon2);
-//		panel.add(lblNewLabel_3);
+
 	}
         
         

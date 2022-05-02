@@ -17,8 +17,14 @@ import javax.swing.JTabbedPane;
  *
  * @author binup
  */
+/**
+ * 
+ */
 public class SellerAccount implements AccountType{
-
+    /**
+     * 
+     * @param accModel model to use send id to map to inventory. 
+     */
     public SellerAccount(AccountModel accModel) {
         this.accModel = accModel;
         
@@ -26,8 +32,11 @@ public class SellerAccount implements AccountType{
     }
 
     @Override
+    /**
+     * loads platform specific to user using product and revenue views.
+     */
     public void loadUserPlatform() {
-        
+        //create views and controller and models to show seller screen.
         PostAuthView postAuthView = new PostAuthView("seller");
         Product Inventory = new Product();
         Revenue rev = new Revenue();
@@ -44,6 +53,9 @@ public class SellerAccount implements AccountType{
         
         
     }
+    /**
+     * field of view model and controller.
+     */
     public JTabbedPane tabs;
     public AccountModel accModel;
     public ProductController controller;
