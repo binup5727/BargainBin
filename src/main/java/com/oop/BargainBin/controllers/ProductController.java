@@ -1,4 +1,7 @@
-
+/**
+ * @author Athul
+ * @author Binup
+ */
 package com.oop.BargainBin.controllers;
 
 import com.oop.BargainBin.observerPattern.ProductPublisher;
@@ -78,6 +81,7 @@ public class ProductController {
         
         
         //revenue view calls to controller.
+        //Calculates revenue.
         rev.btnNewButton.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -91,10 +95,8 @@ public class ProductController {
                                     double profit = sld * nxt.getPrice();
                                     double cost = profit * .25;
                                     double totSlValue = profit - cost;
-                                    rev.textField_3.setText(Integer.toString(sld));
-                                    rev.textField_4.setText(Double.toString(profit));
-                                    rev.textField_5.setText(Double.toString(cost));
-                                    rev.textField_5.setText(Double.toString(totSlValue));
+                                    calculateRevenue(profit, cost, sld, totSlValue);
+                                    
                                 }
                             }
 
@@ -182,6 +184,13 @@ public class ProductController {
         this.Inventory.table_2.setModel(table);
         
     }
+    public void calculateRevenue(double profit, double cost, int sld, double totSlValue){
+        rev.textField_3.setText(Double.toString(profit));
+        rev.textField_4.setText(Double.toString(cost));
+        rev.textField_5.setText(Double.toString(sld));
+        rev.textField_6.setText(Double.toString(totSlValue));
+
+    }
     /**
      * 
      * @param name searches name if found deletes item from inventory. 
@@ -261,6 +270,7 @@ public class ProductController {
             view.resetCheckoutPanel(convertCartListToObjects(Cart.getInstance().getCartItems()));
             //Open the checkout tab
             view.openCheckoutTab();
+            
         }
     }
 

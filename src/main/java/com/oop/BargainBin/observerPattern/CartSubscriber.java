@@ -4,6 +4,7 @@ import com.oop.BargainBin.models.ProductModel;
 import com.oop.BargainBin.singletonPattern.Cart;
 
 /**
+ * @author Athul
  * Cart subscriber for add the items to the cart
  */
 public class CartSubscriber implements Observer{

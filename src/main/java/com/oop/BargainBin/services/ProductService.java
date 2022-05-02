@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * @author Binup
  * Product service class for the product related methods
  */
 public class ProductService {

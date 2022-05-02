@@ -17,6 +17,10 @@ import java.awt.event.ActionEvent;
  * creates revenue view with all components
  * gets and outputs data on sales.
  */
+/**
+ * 
+ * @author rev Remekie
+ */
 public class Revenue{
 
 	public JPanel contentPane;

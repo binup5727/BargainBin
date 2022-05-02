@@ -16,6 +16,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
 /**
+ * @author Athul
  * Class that implements the strategy pattern to load the customer views
  */
 public class CustomerAccount implements AccountType{

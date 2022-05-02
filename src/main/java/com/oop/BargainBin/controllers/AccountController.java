@@ -27,6 +27,7 @@ public class AccountController {
      * view has actionlistner functions that tell control of new data from user.
      * @param logRegView view of preauth screen
      * @param accModel view of model of account to fill with user info.
+     * acc
      */
     public AccountController(LoginRegisterView logRegView, AccountModel accModel) {
         this.accModel = accModel;
@@ -120,12 +121,15 @@ public class AccountController {
     
     /**
      * fields
+     *  public AccountType account account type of user that logged in
+     * 
      */
+    // Variables declaration - do not modify
     public AccountModel accModel;
     public LoginRegisterView logRegView;
     public AccountService accountService = new AccountService();
-    //account of user type strategy interface.
     public AccountType account;
+    // End of variables declaration
 
 }
 

@@ -4,6 +4,7 @@ import com.oop.BargainBin.models.ProductModel;
 
 /**
  * The publisher subject interface
+ * @author Athul
  */
 public interface PublisherSubject {
     void attach(Observer o);

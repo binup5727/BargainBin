@@ -5,6 +5,7 @@ import java.awt.*;
 
 /**
  * Editor button
+ * @author Athul
  */
 public class ButtonEditor extends DefaultCellEditor {
     private String label;

@@ -2,6 +2,7 @@ package com.oop.BargainBin.models;
 
 /**
  * Model for Products
+ * @author Binup
  */
 public class ProductModel {
     private int id;

@@ -7,6 +7,10 @@ package com.oop.BargainBin.views;
 /**
  *
  * @author binup
+ * 
+ * 
+ * @author rev Remekie
+ *
  */
 
 import javax.swing.JFrame;

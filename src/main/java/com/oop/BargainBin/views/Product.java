@@ -16,7 +16,10 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
-
+/**
+ * 
+ * @author rev Remekie
+ */
 public class Product{
 
 	public JPanel contentPane;

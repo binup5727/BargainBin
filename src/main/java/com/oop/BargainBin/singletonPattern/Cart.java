@@ -5,6 +5,7 @@ import com.oop.BargainBin.models.ProductModel;
 import java.util.ArrayList;
 
 /**
+ * @author Athul
  * Singleton object for the Cart
  */
 public class Cart {

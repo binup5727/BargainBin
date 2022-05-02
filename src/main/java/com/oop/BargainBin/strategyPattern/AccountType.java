@@ -8,6 +8,7 @@ package com.oop.BargainBin.strategyPattern;
 /**
  *
  * @author binup
+ * 
  */
 public interface AccountType {
 

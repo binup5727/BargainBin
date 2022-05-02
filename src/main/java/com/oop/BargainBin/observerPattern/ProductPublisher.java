@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @author Athul
  * Publisher for product in the observer pattern
  */
 public class ProductPublisher implements PublisherSubject {
