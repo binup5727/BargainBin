@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.oop.BargainBin.controllers;
 
 import com.oop.BargainBin.observerPattern.ProductPublisher;
@@ -79,11 +76,27 @@ public class ProductController {
             
         }
         
+        
         //revenue view calls to controller.
         rev.btnNewButton.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            //String
+                            String name = rev.textField.getText();
+                            
+                            Iterator<ProductModel> iter = products.iterator();
+                            while (iter.hasNext()) {
+                                ProductModel nxt = iter.next();
+                                if(nxt.getName().equals(name)){
+                                    int sld = nxt.getSold();
+                                    double profit = sld * nxt.getPrice();
+                                    double cost = profit * .25;
+                                    double totSlValue = profit - cost;
+                                    rev.textField_3.setText(Integer.toString(sld));
+                                    rev.textField_4.setText(Double.toString(profit));
+                                    rev.textField_5.setText(Double.toString(cost));
+                                    rev.textField_5.setText(Double.toString(totSlValue));
+                                }
+                            }
 
                         }
         });

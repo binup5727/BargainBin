@@ -124,6 +124,7 @@ public class AccountController {
     public AccountModel accModel;
     public LoginRegisterView logRegView;
     public AccountService accountService = new AccountService();
+    //account of user type strategy interface.
     public AccountType account;
 
 }

@@ -20,30 +20,29 @@ import java.awt.event.ActionEvent;
 public class Revenue{
 
 	public JPanel contentPane;
-	private JTextField textField;
+	public JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JLabel lblBuyPrice;
 	private JLabel lblSellPrice;
 	public JButton btnNewButton;
 	private JButton btnNewButton_1;
-	private JTextField textField_3;
+	public JTextField textField_3;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	private JTextField textField_4;
+	public JTextField textField_4;
 	private JLabel lblNewLabel_2;
-	private JTextField textField_5;
+	public JTextField textField_5;
 	private JLabel lblNewLabel_3;
-	private JTextField textField_6;
+	public JTextField textField_6;
 	private JLabel lblNewLabel_4;
 
 
 	public Revenue() {
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//setBounds(100, 100, 851, 541);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		//setContentPane(contentPane);
+		
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -62,53 +61,16 @@ public class Revenue{
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(238, 125, 160, 20);
-		contentPane.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(238, 192, 160, 20);
-		contentPane.add(textField_2);
-		
-		JLabel lblProductId = new JLabel("Product ID");
+
+		JLabel lblProductId = new JLabel("Name");
 		lblProductId.setBounds(50, 71, 72, 14);
 		contentPane.add(lblProductId);
-		
-		lblBuyPrice = new JLabel("Buy Price");
-		lblBuyPrice.setBounds(50, 128, 72, 14);
-		contentPane.add(lblBuyPrice);
-		
-		lblSellPrice = new JLabel("Sell Price");
-		lblSellPrice.setBounds(50, 195, 83, 14);
-		contentPane.add(lblSellPrice);
-		
+
 		btnNewButton = new JButton("Calculate");
-		btnNewButton.addActionListener(new ActionListener() {
-                        @Override
-			public void actionPerformed(ActionEvent e) {
-				double buyprice = Double.parseDouble(textField_1.getText());
-				double sellprice = Double.parseDouble(textField_2.getText());
-				int quantity = Integer.parseInt(textField_4.getText());
-				
-				
-				double cost  = buyprice * quantity;
-				textField_5.setText(String.valueOf(cost));
-				
-				double sale = sellprice * quantity;
-				textField_6.setText(String.valueOf(sale));
-								
-								
-				double Profit = sale - cost;			
-				textField_3.setText(String.valueOf(Profit));
-				
-			
-			}
-		});
+		
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(Color.BLUE);
-		btnNewButton.setBounds(143, 286, 89, 23);
+		btnNewButton.setBounds(143, 200, 89, 23);
 		contentPane.add(btnNewButton);
 
 		
@@ -121,17 +83,20 @@ public class Revenue{
 		lblNewLabel.setBounds(50, 360, 46, 14);
 		contentPane.add(lblNewLabel);
 		
+                
 		textField_4 = new JTextField();
-		textField_4.setBounds(238, 238, 160, 20);
+		textField_4.setBounds(238, 411, 160, 20);
 		contentPane.add(textField_4);
 		textField_4.setColumns(10);
 		
+                
 		lblNewLabel_2 = new JLabel("Quantity");
-		lblNewLabel_2.setBounds(50, 241, 83, 14);
+		lblNewLabel_2.setBounds(50, 258, 83, 14);
 		contentPane.add(lblNewLabel_2);
 		
+                
 		textField_5 = new JTextField();
-		textField_5.setBounds(238, 408, 160, 20);
+		textField_5.setBounds(238, 258, 160, 20);
 		contentPane.add(textField_5);
 		textField_5.setColumns(10);
 		
