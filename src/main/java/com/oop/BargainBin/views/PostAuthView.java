@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.oop.BargainBin.views;
 
 import javax.swing.*;
@@ -42,7 +46,7 @@ public class PostAuthView extends JFrame{
      * Constructor
      * @param accountType customer or seller
      */
-     public PostAuthView(String accountType) {
+    public PostAuthView(String accountType) {
         initComponents(accountType);
     }
 
@@ -60,7 +64,6 @@ public class PostAuthView extends JFrame{
             buttonCart = new JButton("Cart : "+ cartCount + ". Total Amount : " + 0);
             buttonCheckout.setBounds(181, 166, 89, 23);
         }
-        
     }
 
     /**
