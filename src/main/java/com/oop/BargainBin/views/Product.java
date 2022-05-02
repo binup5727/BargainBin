@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.oop.BargainBin.views;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -47,22 +43,6 @@ public class Product{
         public final JTextField comboBox;
         
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Product frame = new Product();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
 
 	/**
 	 * Create the frame.
@@ -70,59 +50,6 @@ public class Product{
 	public Product() {
 		//getContentPane().setLayout(null);
 		
-//		panel = new JPanel();
-//		panel.setBackground(Color.BLUE);
-//		panel.setBounds(0, 0, 799, 64);
-//		//getContentPane().add(panel);
-//		panel.setLayout(null);
-//		
-//		txtProducts = new JTextField();
-//		txtProducts.setText("Products");
-//		txtProducts.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 36));
-//		txtProducts.setBounds(306, 11, 173, 42);
-//		panel.add(txtProducts);
-//		txtProducts.setColumns(10);
-//		
-////		textField_1 = new JTextField();
-////		textField_1.setBounds(195, 75, 223, 28);
-////		getContentPane().add(textField_1);
-////		textField_1.setColumns(10);
-//		
-//		textField_2 = new JTextField();
-//		textField_2.setColumns(10);
-//		textField_2.setBounds(195, 144, 223, 28);
-//		panel.add(textField_2);
-//		
-//		textField_3 = new JTextField();
-//		textField_3.setColumns(10);
-//		textField_3.setBounds(195, 213, 223, 28);
-//		panel.add(textField_3);
-//		
-//		textField_4 = new JTextField();
-//		textField_4.setColumns(10);
-//		textField_4.setBounds(195, 286, 223, 28);
-//		panel.add(textField_4);
-//		
-//		JLabel lblNewLabel = new JLabel("Product ID");
-//		lblNewLabel.setBounds(47, 82, 84, 21);
-//		panel.add(lblNewLabel);
-//		
-//		JLabel lblQuantity = new JLabel("Quantity");
-//		lblQuantity.setBounds(36, 151, 84, 21);
-//		panel.add(lblQuantity);
-//		panel.setLayout(null);
-//		
-//		JPanel panel1 = new JPanel();
-//		panel.setBackground(Color.BLUE);
-//		panel.setBounds(0, 0, 799, 86);
-//		panel.add(panel);
-//		
-//		textField = new JTextField();
-//		textField.setBounds(177, 271, 86, 20);
-//		panel.add(textField);
-//		textField.setColumns(10);
-//		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		//setBounds(100, 100, 928, 538);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		//setContentPane(contentPane);
@@ -213,16 +140,16 @@ public class Product{
 		scrollPane.setViewportView(table_2);
 		table_2.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
 			},
 			new String[] {
 				"Product ID", "Name", "Price", "Description", "Category", "Sold"

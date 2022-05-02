@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.oop.BargainBin.patterns;
+package com.oop.BargainBin.strategyPattern;
 
 import com.oop.BargainBin.BargainBin;
 import com.oop.BargainBin.controllers.ProductController;
@@ -34,13 +34,15 @@ public class CustomerAccount implements AccountType{
     }
 
     private void initView(){
+    //Initializing the postAuthView based on the user type
         PostAuthView postAuthView = new PostAuthView("customer");
 
         ProductModel model = new ProductModel();
         controller = new ProductController(model, postAuthView);
-        controller.getClass();
+        
         BargainBin.getInst().getMainFrame().add(postAuthView.getTabs());
         postAuthView.getTabs().setVisible(true);
+
     }
     
     

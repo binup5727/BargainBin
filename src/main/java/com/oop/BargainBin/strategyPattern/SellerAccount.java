@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.oop.BargainBin.patterns;
+package com.oop.BargainBin.strategyPattern;
 
 import com.oop.BargainBin.BargainBin;
 import com.oop.BargainBin.controllers.ProductController;
@@ -39,7 +39,6 @@ public class SellerAccount implements AccountType{
         controller = new ProductController(model, postAuthView, Inventory, rev, accModel.id);
         
         BargainBin.getInst().getMainFrame().add(tabs);
-        
         
         
         

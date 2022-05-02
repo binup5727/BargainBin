@@ -5,10 +5,10 @@
 package com.oop.BargainBin.controllers;
 import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.BargainBin;
-import com.oop.BargainBin.patterns.AccountType;
-import com.oop.BargainBin.patterns.CustomerAccount;
-import com.oop.BargainBin.patterns.SellerAccount;
+import com.oop.BargainBin.strategyPattern.AccountType;
+import com.oop.BargainBin.strategyPattern.CustomerAccount;
 import com.oop.BargainBin.services.AccountService;
+import com.oop.BargainBin.strategyPattern.SellerAccount;
 import com.oop.BargainBin.views.LoginRegisterView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -103,11 +103,11 @@ public class AccountController {
         }else{
             accModel = temp;
             changeView();
-            
-            
+
+
         }
-        
-    
+
+
     }
 
     /**

@@ -1,7 +1,7 @@
 package com.oop.BargainBin.services;
 
-import com.oop.BargainBin.models.InventoryModel;
 import com.oop.BargainBin.models.ProductModel;
+import com.oop.BargainBin.singletonPattern.Cart;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -41,11 +41,8 @@ public class ProductService {
     public ArrayList<ProductModel> getProductList() {
         ArrayList<ProductModel> productList = new ArrayList<>();
         try {
-            //replace with the database coding
-//            ProductModel model1 = new ProductModel(1, "Apple", 10, "this is an apple", "Fruit", 1);
-//            ProductModel model2 = new ProductModel(1, "Soap", 10, "this is a soap", "Bathing", 1);
-//            productList.add(model1);
-//            productList.add(model2);
+            
+            
             productList = toModel(SerializationService.deSerialize(new FileInputStream(file)));
             
         } catch (Exception ex) {
@@ -53,6 +50,7 @@ public class ProductService {
         }
         return productList;
     }
+    
     public void saveProduct(ProductModel pro){
         
         
@@ -66,13 +64,58 @@ public class ProductService {
             System.out.println("empty file");
             
         }
+           
+    }
+    public void saveProductAll(ArrayList<ProductModel> pro){
+        
+        
+        try {
+            ArrayList<ArrayList<String>> productLst = toArray(pro);
+            
+            SerializationService.Serialize(new FileOutputStream(file), productLst);
+            
+            
+        } catch (Exception ex) {
+            System.out.println("empty file");
+            
+        }
         
         
 }
     
 
         
-}
+
+    /**
+     * Check if the required quantity of product is available for adding to the cart
+     * @param model product
+     * @return available or not
+     */
+    public boolean isProductAvailableForCart(ProductModel model){
+        try{
+            //Using the selected product, we are checking if the product is available in the cart. If so, we fetch that product
+            ProductModel product = Cart.getInstance().getCartItems().stream().filter(p->p.getName().equals(model.getName())).findAny().orElse(null);
+            if(product != null) {
+                //Checking if the cart count exceeds or reached the maximum available quantity
+                if (product.getQuantityAvailable() <= product.getCartCount()) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        catch (Exception exception){
+            return false;
+        }
+    }
+
+    /**
+     * Delete the selected product from the cart
+     * @param model product model
+     */
+    public void deleteFromCart(ProductModel model){
+        Cart.getInstance().getCartItems().removeIf(p -> p.getName() == model.getName());
+    }
+
 //    public void deleteProduct(){
 //        
 //    }
@@ -87,7 +130,8 @@ public class ProductService {
             Arrlst.get(i).add(Float.toString(mods.get(i).getPrice()));
             Arrlst.get(i).add(mods.get(i).getDescription());
             Arrlst.get(i).add(mods.get(i).getCategory());
-            Arrlst.get(i).add(Boolean.toString(mods.get(i).getSold()));
+            Arrlst.get(i).add(Integer.toString(mods.get(i).getSold()));
+            Arrlst.get(i).add(Integer.toString(mods.get(i).getQuantityAvailable()));
                 
                 
             
@@ -110,7 +154,8 @@ public class ProductService {
             mods.get(i).setPrice(Float.parseFloat(Arrlst.get(i).get(2)));
             mods.get(i).setDescription(Arrlst.get(i).get(3));
             mods.get(i).setCategory(Arrlst.get(i).get(4));
-            mods.get(i).setSold(Boolean.getBoolean(Arrlst.get(i).get(5)));
+            mods.get(i).setSold(Integer.parseInt(Arrlst.get(i).get(5)));
+            mods.get(i).setQuantityAvailable(Integer.parseInt(Arrlst.get(i).get(6)));
         }
         return mods;
         

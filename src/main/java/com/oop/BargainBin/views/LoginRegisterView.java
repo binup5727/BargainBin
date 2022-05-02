@@ -95,20 +95,12 @@ public class LoginRegisterView implements Serializable{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-//		frame = new JFrame();
-//		frame.getContentPane().setBackground(Color.BLACK);
-//		frame.setBounds(100, 100, 545, 457);
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		frame.getContentPane().setLayout(null);
+
 		tabs = new javax.swing.JTabbedPane();
                 tabs.setPreferredSize(new Dimension(800,800));
                 tabs.setMinimumSize(new Dimension(800,800));
                 tabs.setMaximumSize(new Dimension(800,800));
-//		panel = new JPanel();
-//		panel.setBackground(SystemColor.textHighlight);
-//		panel.setBounds(10, 11, 509, 396);
-//		//frame.getContentPane().add(panel);
-//		tabs.setLayout(null);
+
 
                 int x = 51;
                 

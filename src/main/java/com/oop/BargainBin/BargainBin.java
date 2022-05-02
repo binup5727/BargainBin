@@ -7,11 +7,9 @@ package com.oop.BargainBin;
 import com.oop.BargainBin.controllers.AccountController;
 import com.oop.BargainBin.models.AccountModel;
 import com.oop.BargainBin.views.LoginRegisterView;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
 
 /**
  *
@@ -34,7 +32,7 @@ public class BargainBin {
         });
         mainFrame.setLayout(new BoxLayout(mainFrame.getContentPane(), BoxLayout.LINE_AXIS));
         mainFrame.add(logRegView.getTabs());
-        mainFrame.setPreferredSize(new Dimension(800, 800));
+        mainFrame.setPreferredSize(new Dimension(1500, 1500));
         mainFrame.pack();
         mainFrame.setVisible(true);
        
@@ -79,27 +77,7 @@ public class BargainBin {
         
         BargainBin BargainBinMain = BargainBin.getInst();
         
-        
-//        Temp main = new Temp();
-//        
-//        LoginRegisterView login = null;
-//        System.out.println("login added");
-//        login = new LoginRegisterView();
-//        JTabbedPane loginPanel = login.getTabs();
-//        main.setLayout(new BorderLayout());
-//        System.out.println(login);
-//        main.add(loginPanel);
-//        
-//        
-//        //main.pack();
-//        
-//        System.out.println(loginPanel.getParent());
-//        main.setVisible(true);
-//        //main.setBounds(0, 0, main.getWidth(), main.getHeight() - main.Tabs.getHeight());
-//        main.MainPage.remove(0);
-//        
-//        
-//        System.out.println(main);
+
     }
 
     public JFrame getMainFrame() {

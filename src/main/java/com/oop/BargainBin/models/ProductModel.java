@@ -16,6 +16,8 @@ public class ProductModel {
 
     /**
      * Constructor
+     * @param quantityAvailable quantityAvailable
+   
      * @param id product Id
      * @param name product name
      * @param price product price
@@ -30,12 +32,13 @@ public class ProductModel {
         this.price = price;
         this.description = description;
         this.category = category;
-        this.cartCount = cartCount;
+        this.cartCount = 0;
         this.quantityAvailable = quantityAvailable;
     }
 
     public ProductModel() {
     }
+
 
     public void setSold(int sold) {
         this.sold = sold;
