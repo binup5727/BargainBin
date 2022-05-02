@@ -20,72 +20,69 @@ public class ProductService {
      */
     String file;
     public ProductService(){
-        
-    this.file = System.getProperty("user.dir") + "/src/Db/Products.txt";
-    try {
-      File f = new File(this.file);
-      if (f.createNewFile()) {
-        System.out.println("File created: " + f.getName());
-        this.file = f.getPath(); 
-      } else {
-        System.out.println("File already exists.");
-      }
-    } catch (IOException e) {
-      System.out.println("An error occurred.");
+
+        this.file = System.getProperty("user.dir") + "/src/Db/Products.txt";
+        try {
+            File f = new File(this.file);
+            if (f.createNewFile()) {
+                System.out.println("File created: " + f.getName());
+                this.file = f.getPath();
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
         }
-
-
-    
-        
     }
+
+    /**
+     * Getting product list
+     * @return product list
+     */
     public ArrayList<ProductModel> getProductList() {
         ArrayList<ProductModel> productList = new ArrayList<>();
         try {
-            
-            
             productList = toModel(SerializationService.deSerialize(new FileInputStream(file)));
-            
+
         } catch (Exception ex) {
             return productList;
         }
         return productList;
     }
-    
+      
+    /**
+     * Sves the product
+     * @param pro product to be saved
+     */
     public void saveProduct(ProductModel pro){
-        
-        
         try {
             ArrayList<ProductModel> productLst = getProductList();
             productLst.add(pro);
             SerializationService.Serialize(new FileOutputStream(file), toArray(productLst));
-            
-            
+
+
         } catch (Exception ex) {
             System.out.println("empty file");
-            
+
         }
-           
+
     }
+
+    /**
+     * Save all products
+     * @param pro list of products
+     */
     public void saveProductAll(ArrayList<ProductModel> pro){
-        
-        
         try {
             ArrayList<ArrayList<String>> productLst = toArray(pro);
-            
+
             SerializationService.Serialize(new FileOutputStream(file), productLst);
-            
-            
+
+
         } catch (Exception ex) {
             System.out.println("empty file");
-            
         }
-        
-        
-}
-    
-
-        
-
+    }
     /**
      * Check if the required quantity of product is available for adding to the cart
      * @param model product
@@ -116,15 +113,16 @@ public class ProductService {
         Cart.getInstance().getCartItems().removeIf(p -> p.getName() == model.getName());
     }
 
-//    public void deleteProduct(){
-//        
-//    }
-    
+    /**
+     * Convert to array
+     * @param mods list to convert
+     * @return converted array
+     */
     public ArrayList<ArrayList<String>> toArray(ArrayList<ProductModel> mods){
         ArrayList<ArrayList<String>> Arrlst = new ArrayList<>();
         for (int i = 0; i < mods.size(); i++) {
             Arrlst.add(new ArrayList<>());
-            
+
             Arrlst.get(i).add(Integer.toString(mods.get(i).getId()));
             Arrlst.get(i).add(mods.get(i).getName());
             Arrlst.get(i).add(Float.toString(mods.get(i).getPrice()));
@@ -132,19 +130,16 @@ public class ProductService {
             Arrlst.get(i).add(mods.get(i).getCategory());
             Arrlst.get(i).add(Integer.toString(mods.get(i).getSold()));
             Arrlst.get(i).add(Integer.toString(mods.get(i).getQuantityAvailable()));
-                
-                
-            
         }
-        
-        
-        
+
         return Arrlst;
-        
-        
-        
+
     }
-    
+    /**
+     * 
+     * @param Arrlst
+     * @return 
+     */
     public ArrayList<ProductModel> toModel(ArrayList<ArrayList<String>> Arrlst){
         ArrayList<ProductModel> mods = new ArrayList<>();
         for (int i = 0; i < Arrlst.size(); i++) {
@@ -158,6 +153,6 @@ public class ProductService {
             mods.get(i).setQuantityAvailable(Integer.parseInt(Arrlst.get(i).get(6)));
         }
         return mods;
-        
+
     }
 }

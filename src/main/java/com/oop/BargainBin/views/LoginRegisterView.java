@@ -9,10 +9,7 @@ package com.oop.BargainBin.views;
  * @author binup
  */
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.awt.SystemColor;

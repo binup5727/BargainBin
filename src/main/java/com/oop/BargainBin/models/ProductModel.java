@@ -52,6 +52,7 @@ public class ProductModel {
 
     public void setQuantityAvailable(int quantityAvailable) {
         this.quantityAvailable = quantityAvailable;
+        this.id = id;
     }
 
     public int getSold() {
@@ -83,6 +84,7 @@ public class ProductModel {
         return category;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }
@@ -102,5 +104,4 @@ public class ProductModel {
     public void setCategory(String category) {
         this.category = category;
     }
-    
 }

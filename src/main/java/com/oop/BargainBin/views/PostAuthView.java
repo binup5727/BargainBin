@@ -9,6 +9,7 @@ import java.util.Locale;
 
 /**
  * Master view for the post auth functionalities
+ *
  */
 public class PostAuthView extends JFrame{
 
@@ -20,13 +21,22 @@ public class PostAuthView extends JFrame{
     DefaultTableModel productModel ;
     private javax.swing.JTable cartTable ;
     DefaultTableModel cartModel ;
+    private javax.swing.JTable checkoutTable ;
+    DefaultTableModel checkoutModel ;
 
+    private JTextField textCreditCard;
+    private JTextField textAddress;
+    private JLabel labelCreditCard;
+    private JLabel labelAddress;
 
     JPanel panelProducts = new JPanel(new BorderLayout());
     JPanel panelCart = new JPanel(new BorderLayout());
+    JPanel panelCheckout = new JPanel(new BorderLayout());
     JButton buttonCart ;
     JButton button = new JButton();
     JButton buttonDelete = new JButton();
+    JButton buttonCheckout = new JButton("Checkout");
+    JButton buttonOrder = new JButton("Order");
 
     /**
      * Constructor
@@ -44,11 +54,11 @@ public class PostAuthView extends JFrame{
         tabs = new javax.swing.JTabbedPane();
 
         if (accountType.toLowerCase(Locale.ROOT).equals("customer")) {
-            tabs.setPreferredSize(new Dimension(800, 800));
-            tabs.setMinimumSize(new Dimension(800, 800));
-            tabs.setMaximumSize(new Dimension(800, 800));
+            tabs.setPreferredSize(new Dimension(1000, 800));
+            tabs.setMinimumSize(new Dimension(1000, 700));
+            tabs.setMaximumSize(new Dimension(1000, 700));
             buttonCart = new JButton("Cart : "+ cartCount + ". Total Amount : " + 0);
-            
+            buttonCheckout.setBounds(181, 166, 89, 23);
         }
         
     }
@@ -76,6 +86,7 @@ public class PostAuthView extends JFrame{
 
         panel.add(tabs);
         panel.add(buttonCart);
+        panel.add(buttonCheckout);
     }
     public void setProductPanel(Object[][] products){
         String[] columns = new String [] {"Name", "Price", "Category", "Description", "Quantity Available", "Action"};
@@ -94,7 +105,7 @@ public class PostAuthView extends JFrame{
         //Adding the table and the products panel to the tabs
         panelProducts.add(new JScrollPane(productTable), BorderLayout.CENTER);
         panelProducts.setBackground(SystemColor.activeCaption);
-        panelProducts.setBounds(0, 0, 800, 396);
+        panelProducts.setBounds(0, 0, 900, 396);
         tabs.addTab("Products", panelProducts);
     }
 
@@ -114,17 +125,79 @@ public class PostAuthView extends JFrame{
 
         panelCart.add(new JScrollPane(cartTable), BorderLayout.CENTER);
         panelCart.setBackground(SystemColor.activeCaption);
-        panelCart.setBounds(205, 0, 800, 396);
+        panelCart.setBounds(205, 0, 900, 396);
+
         tabs.addTab("Cart", panelCart);
     }
 
+    /**
+     * Set the checkout panel
+     * @param cartItems cart items for checkout
+     */
+    public void setCheckoutPanel(Object[][] cartItems){
+        textAddress = new JTextField();
+        textAddress.setBounds(150, 550, 143, 20);
+        panelCheckout.add(textAddress);
+        textAddress.setColumns(10);
+
+        textCreditCard = new JPasswordField();
+        textCreditCard.setBounds(150, 600, 143, 20);
+        panelCheckout.add(textCreditCard);
+
+        labelAddress = new JLabel("Address");
+
+        labelAddress.setBounds(51, 550, 72, 14);
+        panelCheckout.add(labelAddress);
+
+        labelCreditCard = new JLabel("Credit card");
+        labelCreditCard.setBounds(51, 600, 72, 14);
+        panelCheckout.add(labelCreditCard);
+
+        buttonOrder.setBounds(51, 640, 100, 35);
+        panelCheckout.add(buttonOrder);
+
+        String[] columns = new String [] {"Name", "Price", "Category", "Description", "Quantity for purchase"};
+        checkoutModel = new DefaultTableModel(cartItems, columns);
+
+        //Adding cart list to the cart table
+        checkoutTable = new javax.swing.JTable(checkoutModel);
+
+        checkoutTable.getTableHeader().setReorderingAllowed(false);
+        checkoutTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        checkoutTable.getColumnModel().getColumn(0).setPreferredWidth(113);
+        checkoutTable.setModel(checkoutModel);
+
+        panelCheckout.add(new JScrollPane(checkoutTable), BorderLayout.CENTER);
+        panelCheckout.setBackground(SystemColor.activeCaption);
+        panelCheckout.setBounds(205, 0, 900, 396);
+
+        tabs.addTab("Checkout", panelCheckout);
+        panel.add(tabs);
+    }
+
+    /**
+     * Resetting the cart panel
+     * @param cartItems items to be added to the panel
+     */
     public void resetCartPanel(Object[][] cartItems){
         panelCart.removeAll();
         setCartPanel(cartItems);
     }
-    public void resetProductPanel(Object[][] products){
-        panelProducts.removeAll();
-        setProductPanel(products);
+
+    /**
+     * Resetting the checkout panel
+     * @param cartItems items to be added to the panel
+     */
+    public void resetCheckoutPanel(Object[][] cartItems){
+        panelCheckout.removeAll();
+        setCheckoutPanel(cartItems);
+    }
+
+    /**
+     * Open the checkout tab
+     */
+    public void openCheckoutTab(){
+        tabs.setSelectedIndex(2);
     }
 
     /**
@@ -135,11 +208,31 @@ public class PostAuthView extends JFrame{
     }
 
     /**
+     * Get the tab count
+     * @return tab count
+     */
+    public int getTabCount(){
+        return tabs.getTabCount();
+    }
+
+    /**
      * Open the cart tab listener
-     * @param listener
+     * @param listener listener
      */
     public void openCartListener(ActionListener listener){
         buttonCart.addActionListener(listener);
+    }
+
+    public  int getCheckoutTableItemCount(){
+        return checkoutTable.getRowCount();
+
+    }
+    /**
+     * Order listener
+     * @param listener listener
+     */
+    public void orderListener(ActionListener listener){
+        buttonOrder.addActionListener(listener);
     }
 
     private void CartBtnActionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,11 +256,27 @@ public class PostAuthView extends JFrame{
     }
 
     /**
+     * Method to add  checkout for the purchase
+     * @param listener listener to be used
+     */
+    public void checkoutListener(ActionListener listener){
+        buttonCheckout.addActionListener(listener);
+    }
+
+    /**
      * Get the selected row number
      * @return the selected row number
      */
     public int getSelectedRow(){
         return productTable.convertRowIndexToModel(productTable.getSelectedRow());
+    }
+
+    /**
+     * Get the selected row number
+     * @return the selected row number
+     */
+    public int getCartSelectedRow(){
+        return cartTable.convertRowIndexToModel(cartTable.getSelectedRow());
     }
 
     /**

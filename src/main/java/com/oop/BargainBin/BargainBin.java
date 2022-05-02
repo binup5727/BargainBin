@@ -29,7 +29,8 @@ public class BargainBin {
         });
         mainFrame.setLayout(new BoxLayout(mainFrame.getContentPane(), BoxLayout.LINE_AXIS));
         mainFrame.add(logRegView.getTabs());
-        mainFrame.setPreferredSize(new Dimension(1500, 1500));
+        mainFrame.setExtendedState(mainFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        mainFrame.setPreferredSize(new Dimension(1500,800));
         mainFrame.pack();
         mainFrame.setVisible(true);
        
